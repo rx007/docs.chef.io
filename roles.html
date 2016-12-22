@@ -1,0 +1,4070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <title>About Roles &mdash; Chef Docs</title>
+    <link rel="stylesheet" href="_static/chefv2.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:    './',
+    VERSION:     '',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '.html',
+    HAS_SOURCE:  true
+  };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/script.js"></script>
+
+    <link rel="top" title="Chef Docs" href="index.html" />
+    <link rel="next" title="RuboCop" href="rubocop.html" />
+    <link rel="prev" title="Resources Reference" href="resources.html" /> 
+  </head>
+  <body role="document">
+    <div class="body-wrap">
+
+  <nav class="nav-main" role="navigation" data-topbar>
+    <div class="nav-inner">
+      <div class="left">
+        <h1>
+          <a href="https://learn.chef.io">
+            <span>Learn Chef</span>
+          </a>
+        </h1>
+      </div>
+
+      <i id="nav-icon" class="fa fa-bars"></i>
+      <a href="https://www.chef.io/">
+        <img id="logo" src="_static/chef_logo_v2.svg" onerror="_static/chef_logo_v2.png"/>
+      </a>
+
+      <ul class="nav-links links-main">
+        <li class="nav-link">
+          <a href="https://learn.chef.io/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-link">
+          <a href="https://learn.chef.io/skills/">Skills Library</a>
+        </li>
+        <li class="nav-link is-active">
+          <a href="https://docs.chef.io/">Docs</a>
+        </li>
+        <li class="nav-link">
+          <a href="https://www.chef.io/training/">Training</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+    <div class="document chef-docs">
+    <nav class="nav-docs">
+  <ul class="nav-docs-items" id="nav-docs-list">
+    <li class="main-item dark-item docs-search">
+      <form action="/search.html" method="get">
+        <input type="text" placeholder="Search" id="docs-search" name="q">
+        <input type="submit" class="submit-button" value="">
+        <i class="fa fa-search icon-search"></i>
+      </form>
+   
+
+    </li>
+    
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Overview"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-home icon-left"></i> Overview <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/platform_overview.html" title="Platform Overview">
+            Platform Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Community">
+            Community
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community.html" title="About the Community">
+                About the Community
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community_contributions.html" title="Contributing">
+                Contributing
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community_guidelines.html" title="Guidelines">
+                Guidelines
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/style_guide.html" title="Docs Style Guide">
+                Docs Style Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Packages &amp; Platforms">
+            Packages &amp; Platforms
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/packages.html" title="Packages">
+                Packages
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/platforms.html" title="Platforms">
+                Platforms
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_omnitruck.html" title="Omnitruck API">
+                Omnitruck API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_license.html" title="Licensing">
+                Licensing
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Chef"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-tasks icon-left"></i> Chef <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Getting Started">
+            Getting Started
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_overview.html" title="Chef Overview">
+                Chef Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/quick_start.html" title="Quick Start">
+                Quick Start
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_system_requirements.html" title="System Requirements">
+                System Requirements
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Release Notes">
+                Release Notes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes.html" title="Chef Client">
+                    Chef Client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_chefdk.html" title="Chef Development Kit">
+                    Chef Development Kit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_server.html" title="Chef Server">
+                    Chef Server
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_push_jobs.html" title="Chef Push Jobs">
+                    Chef Push Jobs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_ohai.html" title="Ohai">
+                    Ohai
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_deprecations_client.html" title="Deprecations">
+                Deprecations
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/learn-the-basics/" title="Learn the Basics">
+                Learn the Basics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/manage-a-node/" title="Manage a Node">
+                Manage a Node
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/local-development/" title="Get started with Test Kitchen">
+                Get started with Test Kitchen
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/manage-a-web-app/" title="Develop a web app cookbook">
+                Develop a web app cookbook
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/inspec/" title="Verify with InSpec">
+                Verify with InSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/chefspec/" title="Unit test with ChefSpec">
+                Unit test with ChefSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/verify-style/" title="Verify code style">
+                Verify code style
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/refactor-web-app-cookbook/" title="Refactor the web app cookbook">
+                Refactor the web app cookbook
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Concepts">
+            Concepts
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/workstation.html" title="Workstation">
+                Workstation
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_repo.html" title="chef-repo">
+                chef-repo
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/nodes.html" title="Nodes">
+                Nodes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_client.html" title="chef-client">
+                chef-client
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_components.html" title="Server">
+                Server
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_search.html" title="Search">
+                Search
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbooks.html" title="Cookbooks">
+                Cookbooks
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/handlers.html" title="Handlers">
+                Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/manage.html" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Policy">
+                Policy
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/policy.html" title="About Policy">
+                    About Policy
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/data_bags.html" title="Data Bags">
+                    Data Bags
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/environments.html" title="Environments">
+                    Environments
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/roles.html" title="Roles">
+                    Roles
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/push_jobs.html" title="Push Jobs">
+                Push Jobs
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/run_lists.html" title="Run-lists">
+                Run-lists
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Security">
+                Security
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/auth.html#authentication" title="Authentication">
+                    Authentication
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/auth.html#authorization" title="Authorization">
+                    Authorization
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_private_keys.html" title="Private Keys">
+                    Private Keys
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_client.html#run-in-fips-mode" title="FIPS-mode">
+                    FIPS-mode
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket.html#public-supermarket" title="Public Supermarket">
+                    Public Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket.html#private-supermarket" title="Private Supermarket">
+                    Private Supermarket
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/windows.html" title="Microsoft Windows">
+                Microsoft Windows
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Appendix">
+                Appendix
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/environment_variables.html" title="Env Variables">
+                    Env Variables
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/errors.html" title="Troubleshooting">
+                    Troubleshooting
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/glossary.html" title="Glossary">
+                    Glossary
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Setup">
+            Setup
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/proxies.html" title="Proxies">
+                Proxies
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_dk.html" title="Workstation">
+                Workstation
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Nodes">
+                Nodes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/install_bootstrap.html" title="Install via Bootstrap">
+                    Install via Bootstrap
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_omnibus.html" title="Install via URL">
+                    Install via URL
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_windows.html" title="Install on Windows">
+                    Install on Windows
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/junos.html" title="Install on Junos OS">
+                    Install on Junos OS
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_client.html" title="chef-client (executable)">
+                    chef-client (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_client.html" title="client.rb">
+                    client.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/upgrade_client.html" title="Upgrades">
+                    Upgrades
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_client_security.html" title="Security">
+                    Security
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Server">
+                Server
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="https://manage.chef.io/signup" title="Hosted Chef Server">
+                    Hosted Chef Server
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_server.html#standalone" title="Install Standalone">
+                    Install Standalone
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_server_ha.html" title="Install High Availability">
+                    Install High Availability
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/aws_marketplace.html" title="AWS Marketplace">
+                    AWS Marketplace
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/azure_portal.html" title="Microsoft Azure">
+                    Microsoft Azure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/openstack.html" title="Openstack">
+                    Openstack
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="https://supermarket.chef.io" title="Public Supermarket">
+                    Public Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html" title="Install Private Supermarket">
+                    Install Private Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html#customize-supermarket" title="Customize Supermarket">
+                    Customize Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html#run-supermarket-in-kitchen" title="Run in Test Kitchen">
+                    Run in Test Kitchen
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_server.html#install" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_push_jobs.html" title="Push Jobs">
+                Push Jobs
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Integrations">
+                Integrations
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/integrate_compliance_chef_server.html" title="w/Chef Compliance">
+                    w/Chef Compliance
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/uninstall.html" title="Uninstall">
+                Uninstall
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Cookbook Reference">
+            Cookbook Reference
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbooks.html" title="About Cookbooks">
+                About Cookbooks
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/attributes.html" title="Attributes">
+                Attributes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/definitions.html" title="Definitions">
+                Definitions
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/files.html" title="Files">
+                Files
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/libraries.html" title="Libraries">
+                Libraries
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Recipes">
+                Recipes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/recipes.html" title="About Recipes">
+                    About Recipes
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/debug.html" title="Debug Recipes, Client Runs">
+                    Debug Recipes, Client Runs
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Recipe DSL">
+                Recipe DSL
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#attribute" title="attribute?">
+                    attribute?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#control" title="control">
+                    control
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#control-group" title="control_group">
+                    control_group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#cookbook-name" title="cookbook_name">
+                    cookbook_name
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#data-bag" title="data_bag">
+                    data_bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#data-bag-item" title="data_bag_item">
+                    data_bag_item
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#platform" title="platform?">
+                    platform?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#platform-family" title="platform_family?">
+                    platform_family?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#reboot-pending" title="reboot_pending?">
+                    reboot_pending?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#recipe-name" title="recipe_name">
+                    recipe_name
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-data-exists" title="registry_data_exists?">
+                    registry_data_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-get-subkeys" title="registry_get_subkeys">
+                    registry_get_subkeys
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-get-values" title="registry_get_values">
+                    registry_get_values
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-has-subkeys" title="registry_has_subkeys?">
+                    registry_has_subkeys?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-key-exists" title="registry_key_exists?">
+                    registry_key_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-value-exists" title="registry_value_exists?">
+                    registry_value_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#resources" title="resources">
+                    resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#search" title="search">
+                    search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out" title="shell_out">
+                    shell_out
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out-bang" title="shell_out!">
+                    shell_out!
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out-with-systems-locale" title="shell_out_with_systems_locale">
+                    shell_out_with_systems_locale
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="tag">
+                    tag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="tagged?">
+                    tagged?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="untag">
+                    untag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#value-for-platform" title="value_for_platform">
+                    value_for_platform
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#value-for-platform-family" title="value_for_platform_family">
+                    value_for_platform_family
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#helpers" title="Windows Platform Helpers">
+                    Windows Platform Helpers
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Resources">
+                Resources
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/resource.html" title="About Resources">
+                    About Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_common.html" title="Common Functionality">
+                    Common Functionality
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/custom_resources.html" title="Custom Resources">
+                    Custom Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resources.html" title="All Resources (Single Page)">
+                    All Resources (Single Page)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_package.html" title="apt_package">
+                    apt_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_repository.html" title="apt_repository">
+                    apt_repository
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_update.html" title="apt_update">
+                    apt_update
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_bash.html" title="bash">
+                    bash
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_batch.html" title="batch">
+                    batch
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_bff_package.html" title="bff_package">
+                    bff_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_breakpoint.html" title="breakpoint">
+                    breakpoint
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cab_package.html" title="cab_package">
+                    cab_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_gem.html" title="chef_gem">
+                    chef_gem
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_acl.html" title="chef_acl">
+                    chef_acl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_client.html" title="chef_client">
+                    chef_client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_container.html" title="chef_container">
+                    chef_container
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_data_bag_item.html" title="chef_data_bag_item">
+                    chef_data_bag_item
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_data_bag.html" title="chef_data_bag">
+                    chef_data_bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_environment.html" title="chef_environment">
+                    chef_environment
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_group.html" title="chef_group">
+                    chef_group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_handler.html" title="chef_handler">
+                    chef_handler
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_mirror.html" title="chef_mirror">
+                    chef_mirror
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_node.html" title="chef_node">
+                    chef_node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_organization.html" title="chef_organization">
+                    chef_organization
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_role.html" title="chef_role">
+                    chef_role
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_user.html" title="chef_user">
+                    chef_user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chocolatey_package.html" title="chocolatey_package">
+                    chocolatey_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cookbook_file.html" title="cookbook_file">
+                    cookbook_file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cron.html" title="cron">
+                    cron
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_csh.html" title="csh">
+                    csh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_deploy.html" title="deploy">
+                    deploy
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_directory.html" title="directory">
+                    directory
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dpkg_package.html" title="dpkg_package">
+                    dpkg_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dsc_resource.html" title="dsc_resource">
+                    dsc_resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dsc_script.html" title="dsc_script">
+                    dsc_script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_easy_install_package.html" title="easy_install_package">
+                    easy_install_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_env.html" title="env">
+                    env
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_erlang_call.html" title="erl_call">
+                    erl_call
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_execute.html" title="execute">
+                    execute
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_file.html" title="file">
+                    file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_freebsd_package.html" title="freebsd_package">
+                    freebsd_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_gem_package.html" title="gem_package">
+                    gem_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_git.html" title="git">
+                    git
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_group.html" title="group">
+                    group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_homebrew_package.html" title="homebrew_package">
+                    homebrew_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_http_request.html" title="http_request">
+                    http_request
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ifconfig.html" title="ifconfig">
+                    ifconfig
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ips_package.html" title="ips_package">
+                    ips_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ksh.html" title="ksh">
+                    ksh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_launchd.html" title="launchd">
+                    launchd
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_link.html" title="link">
+                    link
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_log.html" title="log">
+                    log
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_macports_package.html" title="macports_package">
+                    macports_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_mdadm.html" title="mdadm">
+                    mdadm
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_mount.html" title="mount">
+                    mount
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_msu_package.html" title="msu_package">
+                    msu_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ohai.html" title="ohai">
+                    ohai
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_openbsd_package.html" title="openbsd_package">
+                    openbsd_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_osx_profile.html" title="osx_profile">
+                    osx_profile
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_package.html" title="package">
+                    package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_pacman_package.html" title="pacman_package">
+                    pacman_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_paludis_package.html" title="paludis_package">
+                    paludis_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_perl.html" title="perl">
+                    perl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_portage_package.html" title="portage_package">
+                    portage_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_powershell_script.html" title="powershell_script">
+                    powershell_script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_private_key.html" title="private_key">
+                    private_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_public_key.html" title="public_key">
+                    public_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_python.html" title="python">
+                    python
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_reboot.html" title="reboot">
+                    reboot
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_registry_key.html" title="registry_key">
+                    registry_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_remote_directory.html" title="remote_directory">
+                    remote_directory
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_remote_file.html" title="remote_file">
+                    remote_file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_route.html" title="route">
+                    route
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_rpm_package.html" title="rpm_package">
+                    rpm_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ruby.html" title="ruby">
+                    ruby
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ruby_block.html" title="ruby_block">
+                    ruby_block
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_script.html" title="script">
+                    script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_service.html" title="service">
+                    service
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_smartos_package.html" title="smartos_package">
+                    smartos_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_solaris_package.html" title="solaris_package">
+                    solaris_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_subversion.html" title="subversion">
+                    subversion
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_systemd_unit.html" title="systemd_unit">
+                    systemd_unit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_template.html" title="template">
+                    template
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_user.html" title="user">
+                    user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_windows_package.html" title="windows_package">
+                    windows_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_windows_service.html" title="windows_service">
+                    windows_service
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_yum.html" title="yum_package">
+                    yum_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_yum_repository.html" title="yum_repository">
+                    yum_repository
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_examples.html" title="Examples (by Resource)">
+                    Examples (by Resource)
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/templates.html" title="Templates">
+                Templates
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbook_repo.html" title="Cookbook Repo">
+                Cookbook Repo
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_metadata.html" title="metadata.rb">
+                metadata.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbook_versions.html" title="Cookbook Versions">
+                Cookbook Versions
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ruby.html" title="Ruby">
+                Ruby
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Chef DK">
+            Chef DK
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/about_chefdk.html" title="About the ChefDK">
+                About the ChefDK
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/berkshelf.html" title="Berkshelf">
+                Berkshelf
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_apply.html" title="chef-apply (executable)">
+                chef-apply (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_shell.html" title="chef-shell (executable)">
+                chef-shell (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="chef (executable)">
+                chef (executable)
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-env" title="chef env">
+                    chef env
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-exec" title="chef exec">
+                    chef exec
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-gem" title="chef gem">
+                    chef gem
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-app" title="chef generate app">
+                    chef generate app
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-attribute" title="chef generate attribute">
+                    chef generate attribute
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-cookbook" title="chef generate cookbook">
+                    chef generate cookbook
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-file" title="chef generate file">
+                    chef generate file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-lwrp" title="chef generate lwrp">
+                    chef generate lwrp
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-recipe" title="chef generate recipe">
+                    chef generate recipe
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-repo" title="chef generate repo">
+                    chef generate repo
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-template" title="chef generate template">
+                    chef generate template
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-provision" title="chef provision">
+                    chef provision
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-shell-init" title="chef shell-init">
+                    chef shell-init
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-verify" title="chef verify">
+                    chef verify
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Chef Solo">
+                Chef Solo
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_solo.html" title="About Chef Solo">
+                    About Chef Solo
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_solo.html" title="chef-solo (executable)">
+                    chef-solo (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_solo.html" title="solo.rb">
+                    solo.rb
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_shell.html" title="chef-shell (executable)">
+                chef-shell (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_client.html#run-in-local-mode" title="chef-zero (local mode)">
+                chef-zero (local mode)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_vault.html" title="chef-vault">
+                chef-vault
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chefspec.html" title="ChefSpec">
+                ChefSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Configuration">
+                Configuration
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb.html" title="config.rb">
+                    config.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_client.html#d-directories" title="Multiple Config Files">
+                    Multiple Config Files
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookstyle.html" title="cookstyle">
+                cookstyle
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_delivery.html" title="Delivery CLI">
+                Delivery CLI
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/foodcritic.html" title="Foodcritic">
+                Foodcritic
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Test Kitchen">
+                Test Kitchen
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/kitchen.html" title="About Test Kitchen">
+                    About Test Kitchen
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_kitchen.html" title="kitchen (executable)">
+                    kitchen (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_yml_kitchen.html" title=".kitchen.yml">
+                    .kitchen.yml
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_kitchen_vagrant.html" title="kitchen-vagrant">
+                    kitchen-vagrant
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Knife">
+                Knife
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/knife.html" title="About Knife">
+                    About Knife
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_common_options.html" title="Common Options">
+                    Common Options
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_using.html" title="Using Knife">
+                    Using Knife
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_knife.html" title="knife.rb">
+                    knife.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_bootstrap.html" title="knife bootstrap">
+                    knife bootstrap
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_client.html" title="knife client">
+                    knife client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_configure.html" title="knife configure">
+                    knife configure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_cookbook.html" title="knife cookbook">
+                    knife cookbook
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_cookbook_site.html" title="knife cookbook site">
+                    knife cookbook site
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_data_bag.html" title="knife data bag">
+                    knife data bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_delete.html" title="knife delete">
+                    knife delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_deps.html" title="knife deps">
+                    knife deps
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_diff.html" title="knife diff">
+                    knife diff
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_download.html" title="knife download">
+                    knife download
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_edit.html" title="knife edit">
+                    knife edit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_environment.html" title="knife environment">
+                    knife environment
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_exec.html" title="knife exec">
+                    knife exec
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_list.html" title="knife list">
+                    knife list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_node.html" title="knife node">
+                    knife node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_raw.html" title="knife raw">
+                    knife raw
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_recipe_list.html" title="knife recipe list">
+                    knife recipe list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_role.html" title="knife role">
+                    knife role
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_search.html" title="knife search">
+                    knife search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_serve.html" title="knife serve">
+                    knife serve
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_show.html" title="knife show">
+                    knife show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssh.html" title="knife ssh">
+                    knife ssh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssl_check.html" title="knife ssl_check">
+                    knife ssl_check
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssl_fetch.html" title="knife ssl_fetch">
+                    knife ssl_fetch
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_status.html" title="knife status">
+                    knife status
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_tag.html" title="knife tag">
+                    knife tag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_upload.html" title="knife upload">
+                    knife upload
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_user.html" title="knife user">
+                    knife user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_xargs.html" title="knife xargs">
+                    knife xargs
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="knife opc">
+                knife opc
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html" title="About knife opc">
+                    About knife opc
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#knife-rb-configuration" title="knife.rb Configuration">
+                    knife.rb Configuration
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-list" title="opc user list">
+                    opc user list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-show" title="opc user show">
+                    opc user show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-create" title="opc user create">
+                    opc user create
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-delete" title="opc user delete">
+                    opc user delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-edit" title="opc user edit">
+                    opc user edit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-password" title="opc user password">
+                    opc user password
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-list" title="opc org list">
+                    opc org list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-show" title="opc org show">
+                    opc org show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-create" title="opc org create">
+                    opc org create
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-delete" title="opc org delete">
+                    opc org delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-user-add" title="opc org user add">
+                    opc org user add
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-user-remove" title="opc org user remove">
+                    opc org user remove
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_spork.html" title="knife spork">
+                knife spork
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="knife supermarket">
+                knife supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html" title="About knife supermarket">
+                    About knife supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#download" title="supermarket download">
+                    supermarket download
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#install" title="supermarket install">
+                    supermarket install
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#list" title="supermarket list">
+                    supermarket list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#search" title="supermarket search">
+                    supermarket search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#share" title="supermarket share">
+                    supermarket share
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#show" title="supermarket show">
+                    supermarket show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#unshare" title="supermarket unshare">
+                    supermarket unshare
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Ohai">
+                Ohai
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ohai.html" title="About Ohai">
+                    About Ohai
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_ohai.html" title="ohai (executable)">
+                    ohai (executable)
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Policyfile">
+                Policyfile
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/policyfile.html" title="About Policyfile">
+                    About Policyfile
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_policyfile.html" title="Policyfile.rb">
+                    Policyfile.rb
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Provisioning">
+                Provisioning
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning.html" title="About Provisioning">
+                    About Provisioning
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_load_balancer.html" title="load_balancer resource">
+                    load_balancer resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine.html" title="machine resource">
+                    machine resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_batch.html" title="machine_batch resource">
+                    machine_batch resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_execute.html" title="machine_execute resource">
+                    machine_execute resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_file.html" title="machine_file resource">
+                    machine_file resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_image.html" title="machine_image resource">
+                    machine_image resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_aws.html" title="AWS Driver Resources">
+                    AWS Driver Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_fog.html" title="Fog Driver Resources">
+                    Fog Driver Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_vagrant.html" title="Vagrant Driver Resources">
+                    Vagrant Driver Resources
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_push_jobs_client.html" title="push-jobs-client (executable)">
+                push-jobs-client (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/rubocop.html" title="Rubocop">
+                Rubocop
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Managing the Server">
+            Managing the Server
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/runbook.html" title="Runbook (Single Page)">
+                Runbook (Single Page)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_backup_restore.html" title="Backup &amp; Restore">
+                Backup &amp; Restore
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_data.html" title="Data Storage">
+                Data Storage
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_firewalls_and_ports.html" title="Firewalls &amp; Ports">
+                Firewalls &amp; Ports
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_ldap.html" title="Active Directory &amp; LDAP">
+                Active Directory &amp; LDAP
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_logs.html" title="Log Files">
+                Log Files
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_monitor.html" title="Monitor">
+                Monitor
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_orgs.html" title="Organizations &amp; Groups">
+                Organizations &amp; Groups
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/secrets.html" title="Secrets">
+                Secrets
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_security.html" title="Security">
+                Security
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_services.html" title="Services">
+                Services
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_tuning.html" title="Tuning">
+                Tuning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_server.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_server_ha_v2.html" title="Upgrade HA Cluster">
+                Upgrade HA Cluster
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_users.html" title="Users">
+                Users
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_server.html" title="chef-server-ctl">
+                chef-server-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_backend.html" title="chef-backend-ctl">
+                chef-backend-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_server.html" title="chef-server.rb">
+                chef-server.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_opscode_expander.html" title="opscode-expander-ctl">
+                opscode-expander-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_chef_server.html" title="Chef Server API">
+                Chef Server API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Push Jobs">
+                Push Jobs
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_push_jobs.html" title="knife push jobs">
+                    knife push jobs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_push_jobs_client.html" title="push-jobs-client">
+                    push-jobs-client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_push_jobs_client.html" title="push-jobs-client.rb">
+                    push-jobs-client.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_push_jobs_server.html" title="push-jobs-server.rb">
+                    push-jobs-server.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/api_push_jobs.html" title="Push Jobs API">
+                    Push Jobs API
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_sent_events.html" title="Server Sent Events">
+                    Server Sent Events
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_logs.html" title="Log Files">
+                    Log Files
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_monitor.html" title="Monitoring">
+                    Monitoring
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_supermarket.html" title="supermarket.rb">
+                    supermarket.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html" title="knife supermarket">
+                    knife supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_supermarket.html" title="supermarket-ctl">
+                    supermarket-ctl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_api.html" title="Supermarket API">
+                    Supermarket API
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Management Console">
+                Management Console
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/server_configure_saml.html" title="Configure SAML">
+                    Configure SAML
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_clients.html" title="Clients">
+                    Clients
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_cookbooks.html" title="Cookbooks">
+                    Cookbooks
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_data_bags.html" title="Data Bags">
+                    Data Bags
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_environments.html" title="Environments">
+                    Environments
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_nodes.html" title="Nodes">
+                    Nodes
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_roles.html" title="Roles">
+                    Roles
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_users.html#chef-manage" title="Users">
+                    Users
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_manage.html" title="manage.rb">
+                    manage.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_manage.html" title="chef-manage-ctl">
+                    chef-manage-ctl
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Habitat"> <!-- if item has custom image -->
+
+        <img class="icon-left" src="./_static/habitat-mark.png"></img> Habitat <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/habitat.html" title="Habitat Overview">
+            Habitat Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://www.habitat.sh/tutorials/getting-started-overview" title="Getting started">
+                Getting started
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="InSpec"> <!-- if item has custom image -->
+
+        <img class="icon-left" src="./_static/inspec_logo.png"></img> InSpec <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/inspec.html" title="InSpec Overview">
+            InSpec Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Chef Automate"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-cogs icon-left"></i> Chef Automate <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Getting Started">
+            Getting Started
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_automate.html" title="Chef Automate Overview">
+                Chef Automate Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_chef_automate.html" title="Installation Guide">
+                Installation Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/install" title="Get Started">
+                Get Started
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/visibility" title="Visibility into Infrastructure">
+                Visibility into Infrastructure
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/deploy-cookbook/" title="Deploy with Chef Automate">
+                Deploy with Chef Automate
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/compliance-assess" title="Assess for Compliance">
+                Assess for Compliance
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/compliance-remediate" title="Remediate Compliance Failures">
+                Remediate Compliance Failures
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Setup">
+            Setup
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_pipeline.html" title="Configure a Pipeline">
+                Configure a Pipeline
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_json_delivery.html" title="Configure a Project">
+                Configure a Project
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/setup_visibility_chef_automate.html" title="Configure Data Collection">
+                Configure Data Collection
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Concepts">
+            Concepts
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2">
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Workflow">
+                Workflow
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/workflow.html" title="Workflow Overview">
+                    Workflow Overview
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_manage_dependencies.html" title="Manage Dependencies">
+                    Manage Dependencies
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/visibility.html" title="Visibility Overview">
+                Visibility Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/compliance.html" title="Compliance Overview">
+                Compliance Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/ctl_delivery.html" title="Delivery CLI">
+            Delivery CLI
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Integrations">
+            Integrations
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_bitbucket.html" title="w/Bitbucket">
+                w/Bitbucket
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_smtp.html" title="w/Email (SMTP)">
+                w/Email (SMTP)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_github.html" title="w/GitHub">
+                w/GitHub
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_ldap.html" title="w/LDAP">
+                w/LDAP
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_chef_automate_saml.html" title="w/SAML">
+                w/SAML
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_slack.html" title="w/Slack">
+                w/Slack
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Cookbooks">
+            Cookbooks
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_build_cookbook.html" title="build-cookbook (cookbook)">
+                build-cookbook (cookbook)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_truck.html" title="delivery-truck (cookbook)">
+                delivery-truck (cookbook)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/publish_cookbooks_multiple_servers.html" title="Publish to Multiple Chef Servers">
+                Publish to Multiple Chef Servers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/dsl_delivery.html" title="Workflow DSL">
+            Workflow DSL
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/job_dispatch.html" title="Job Dispatch">
+            Job Dispatch
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Managing the Server">
+            Managing the Server
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2">
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Backups">
+                Backups
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#configuration" title="Configuration">
+                    Configuration
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#create-backups" title="Create Backups">
+                    Create Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#list-backups" title="List Backups">
+                    List Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#delete-backups" title="Delete Backups">
+                    Delete Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#restore-backups" title="Restore Backups">
+                    Restore Backups
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/scaling_capacity_planning_chef_automate.html" title="Capacity Planning">
+                Capacity Planning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_delivery.html" title="Chef Automate API">
+                Chef Automate API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="automate-ctl">
+                automate-ctl
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#cleanse" title="cleanse">
+                    cleanse
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#create-enterprise" title="create-enterprise">
+                    create-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#create-user" title="create-user">
+                    create-user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-application" title="delete-application">
+                    delete-application
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-enterprise" title="delete-enterprise">
+                    delete-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-project" title="delete-project">
+                    delete-project
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-user" title="delete-user">
+                    delete-user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-visibility-node" title="delete-visibility-node">
+                    delete-visibility-node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-visibility-node-by-id" title="delete-visibility-node-by-id">
+                    delete-visibility-node-by-id
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#gather-logs" title="gather-logs">
+                    gather-logs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#help" title="help">
+                    help
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#install-runner" title="install-runner">
+                    install-runner
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-applications" title="list-applications">
+                    list-applications
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-enterprises" title="list-enterprises">
+                    list-enterprises
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-users" title="list-users">
+                    list-users
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#migrate-change-description" title="migrate-change-description">
+                    migrate-change-description
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#migrate-patchset-diffs" title="migrate-patchset-diffs">
+                    migrate-patchset-diffs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#preflight-check" title="preflight-check">
+                    preflight-check
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#reconfigure" title="reconfigure">
+                    reconfigure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#rename-enterprise" title="rename-enterprise">
+                    rename-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#reset-password" title="reset-password">
+                    reset-password
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#restore-backup" title="restore-backup">
+                    restore-backup
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#revoke-token" title="revoke-token">
+                    revoke-token
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#show-config" title="show-config">
+                    show-config
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#uninstall" title="uninstall">
+                    uninstall
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#update-project-hooks" title="update-project-hooks">
+                    update-project-hooks
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_delivery.html" title="delivery.rb">
+                delivery.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_server_disaster_recovery.html" title="Disaster Recovery">
+                Disaster Recovery
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/elasticsearch_and_kibana_auth.html" title="Elasticsearch &amp; Kibana Auth">
+                Elasticsearch &amp; Kibana Auth
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/manage_indices_chef_automate.html" title="Manage Elasticsearch Indices">
+                Manage Elasticsearch Indices
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/search_query_chef_automate.html" title="Node Search Reference">
+                Node Search Reference
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_manage_secrets.html" title="Secrets">
+                Secrets
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/stream_data_chef_automate.html" title="Stream Data">
+                Stream Data
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_server_tuning.html" title="Tuning">
+                Tuning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_chef_automate.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_users_and_roles.html" title="Users &amp; Roles">
+                Users &amp; Roles
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Compliance scanner">
+            Compliance scanner
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/compliance.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/release_notes_compliance.html" title="Release Notes">
+                Release Notes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_compliance.html" title="Installation Guide">
+                Installation Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_compliance_chef_server.html" title="Integrate w/Chef Server">
+                Integrate w/Chef Server
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_compliance_chef_automate.html" title="Integrate w/Chef Automate">
+                Integrate w/Chef Automate
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_compliance.html" title="Upgrade Compliance">
+                Upgrade Compliance
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_compliance.html" title="chef-compliance.rb">
+                chef-compliance.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_compliance.html" title="Chef Compliance API">
+                Chef Compliance API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/aws_opsworks_chef_automate.html" title="AWS OpsWorks for Chef Automate">
+            AWS OpsWorks for Chef Automate
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/troubleshooting_chef_automate.html" title="Troubleshooting">
+            Troubleshooting
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Legacy"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-hdd-o icon-left"></i> Legacy <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Analytics">
+            Analytics
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/release_notes_analytics.html" title="Release Notes">
+                Release Notes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_analytics.html" title="Install Standalone">
+                Install Standalone
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/actions.html" title="Web UI">
+                Web UI
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_webui_tasks.html" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_nodes_view.html" title="Nodes View">
+                Nodes View
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics.html#integrations" title="Integrations">
+                Integrations
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_splunk.html" title="Splunk">
+                Splunk
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_rules.html" title="Rules">
+                Rules
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_monitor.html" title="Monitor">
+                Monitor
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_analytics.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_client_analytics.html" title="Chef Client for Analytics">
+                Chef Client for Analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_analytics.html" title="opscode-analytics-ctl">
+                opscode-analytics-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_analytics.html" title="opscode-analytics.rb">
+                opscode-analytics.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_analytics.html" title="knife-analytics">
+                knife-analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_analytics.html" title="Analytics API">
+                Analytics API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/dsl_recipe_analytics.html" title="Recipe DSL for Analytics">
+                Recipe DSL for Analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Reporting">
+            Reporting
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/reporting.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_reporting.html" title="Install Reporting">
+                Install Reporting
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_manage_reports.html" title="View Reports">
+                View Reports
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_reporting.html" title="knife reporting">
+                knife reporting
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_reporting.html" title="opscode-reporting-ctl">
+                opscode-reporting-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_reporting.html" title="opscode-reporting.rb">
+                opscode-reporting.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_reporting.html" title="Reporting API">
+                Reporting API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Extension APIs"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-clone icon-left"></i> Extension APIs <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/dsl_compliance.html" title="Compliance DSL">
+            Compliance DSL
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Handlers">
+            Handlers
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/handlers.html#custom-handlers" title="Custom Handlers">
+                Custom Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/dsl_handler.html" title="Handler DSL">
+                Handler DSL
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#handlers" title="Community Handlers">
+                Community Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Knife Plugins">
+            Knife Plugins
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife.html" title="About Cloud Plugins">
+                About Cloud Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_custom.html" title="Custom Plugins">
+                Custom Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#knife" title="Community Plugins">
+                Community Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Ohai Plugins">
+            Ohai Plugins
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ohai_custom.html" title="Custom Plugins">
+                Custom Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#ohai" title="Community Plugins">
+                Community Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/plugin_community.html#chef-client" title="Chef Client Plugins">
+            Chef Client Plugins
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li> <!-- /for item in navItems -->
+    
+    <li class="main-item dark-item">
+      <a href="https://github.com/chef/chef-web-docs" title="Available on GitHub">
+        <i class="fa fa-github icon-left"></i>
+        Available on GitHub
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://www.chef.io/chef/get-chef">
+        <i class="fa fa-download icon-left"></i>
+        Get Chef
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs.chef.io/feedback.html">
+        <i class="fa fa-commenting icon-left"></i>
+        Send Feedback
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://www.chef.io/support/">
+        <i class="fa fa-support icon-left"></i>
+        Support
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs.chef.io/index.html">
+        <i class="fa fa-map-o icon-left"></i>
+        Site Map
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs-archive.chef.io/">
+        <i class="fa fa-archive icon-left"></i>
+        Archive
+      </a>
+    </li>
+  </ul>
+</nav>
+      <div class="documentwrapper"><div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+  <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">About Roles</a><ul>
+<li><a class="reference internal" href="#role-attributes">Role Attributes</a><ul>
+<li><a class="reference internal" href="#attribute-types">Attribute Types</a></li>
+<li><a class="reference internal" href="#attribute-persistence">Attribute Persistence</a></li>
+<li><a class="reference internal" href="#attribute-precedence">Attribute Precedence</a><ul>
+<li><a class="reference internal" href="#whitelist-attributes">Whitelist Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#role-formats">Role Formats</a><ul>
+<li><a class="reference internal" href="#ruby-dsl">Ruby DSL</a></li>
+<li><a class="reference internal" href="#json">JSON</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manage-roles">Manage Roles</a><ul>
+<li><a class="reference internal" href="#set-per-environment-run-lists">Set Per-environment Run-lists</a></li>
+<li><a class="reference internal" href="#delete-from-run-list">Delete from Run-list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="about-roles">
+<h1>About Roles<a class="headerlink" href="#about-roles" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/chef/chef-web-docs/blob/master/chef_master/source/roles.rst">[edit on GitHub]</a></p>
+<p>A role is a way to define certain patterns and processes that exist across nodes in an organization as belonging to a single job function. Each role consists of zero (or more) attributes and a run-list. Each node can have zero (or more) roles assigned to it. When a role is run against a node, the configuration details of that node are compared against the attributes of the role, and then the contents of that role&#8217;s run-list are applied to the node&#8217;s configuration details. When a chef-client runs, it merges its own attributes and run-lists with those contained within each assigned role.</p>
+<div class="section" id="role-attributes">
+<h2>Role Attributes<a class="headerlink" href="#role-attributes" title="Permalink to this headline">¶</a></h2>
+<p>An attribute can be defined in a role and then used to override the default settings on a node. When a role is applied during a chef-client run, these attributes are compared to the attributes that are already present on the node. When the role attributes take precedence over the default attributes, the chef-client will apply those new settings and values during the chef-client run on the node.</p>
+<p>A role attribute can only be set to be a default attribute or an override attribute. A role attribute cannot be set to be a normal attribute. Use the <tt class="docutils literal"><span class="pre">default_attribute</span></tt> and <tt class="docutils literal"><span class="pre">override_attribute</span></tt> methods in the Ruby DSL file or the <tt class="docutils literal"><span class="pre">default_attributes</span></tt> and <tt class="docutils literal"><span class="pre">override_attributes</span></tt> hashes in a JSON data file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Attributes can be configured in cookbooks (attribute files and recipes), roles, and environments. In addition, Ohai collects attribute data about each node at the start of the chef-client run. See <a class="reference external" href="https://docs.chef.io/attributes.html">https://docs.chef.io/attributes.html</a> for more information about how all of these attributes fit together.</p>
+</div>
+<div class="section" id="attribute-types">
+<h3>Attribute Types<a class="headerlink" href="#attribute-types" title="Permalink to this headline">¶</a></h3>
+<p>There are two types of attributes that can be used with roles:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">default</span></tt></td>
+<td>A <tt class="docutils literal"><span class="pre">default</span></tt> attribute is automatically reset at the start of every chef-client run and has the lowest attribute precedence. Use <tt class="docutils literal"><span class="pre">default</span></tt> attributes as often as possible in cookbooks.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">override</span></tt></td>
+<td>An <tt class="docutils literal"><span class="pre">override</span></tt> attribute is automatically reset at the start of every chef-client run and has a higher attribute precedence than <tt class="docutils literal"><span class="pre">default</span></tt>, <tt class="docutils literal"><span class="pre">force_default</span></tt>, and <tt class="docutils literal"><span class="pre">normal</span></tt> attributes. An <tt class="docutils literal"><span class="pre">override</span></tt> attribute is most often specified in a recipe, but can be specified in an attribute file, for a role, and/or for an environment. A cookbook should be authored so that it uses <tt class="docutils literal"><span class="pre">override</span></tt> attributes only when required.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attribute-persistence">
+<h3>Attribute Persistence<a class="headerlink" href="#attribute-persistence" title="Permalink to this headline">¶</a></h3>
+<p>At the beginning of a chef-client run, all attributes are reset. The chef-client rebuilds them using automatic attributes collected by Ohai at the beginning of the chef-client run and then using default and override attributes that are specified in cookbooks or by roles and environments. Normal attributes are never reset. All attributes are then merged and applied to the node according to attribute precedence. At the conclusion of the chef-client run, the attributes that were applied to the node are saved to the Chef server as part of the node object.</p>
+</div>
+<div class="section" id="attribute-precedence">
+<h3>Attribute Precedence<a class="headerlink" href="#attribute-precedence" title="Permalink to this headline">¶</a></h3>
+<p>Attributes are always applied by the chef-client in the following order:</p>
+<ol class="arabic simple">
+<li>A <tt class="docutils literal"><span class="pre">default</span></tt> attribute located in a cookbook attribute file</li>
+<li>A <tt class="docutils literal"><span class="pre">default</span></tt> attribute located in a recipe</li>
+<li>A <tt class="docutils literal"><span class="pre">default</span></tt> attribute located in an environment</li>
+<li>A <tt class="docutils literal"><span class="pre">default</span></tt> attribute located in a role</li>
+<li>A <tt class="docutils literal"><span class="pre">force_default</span></tt> attribute located in a cookbook attribute file</li>
+<li>A <tt class="docutils literal"><span class="pre">force_default</span></tt> attribute located in a recipe</li>
+<li>A <tt class="docutils literal"><span class="pre">normal</span></tt> attribute located in a cookbook attribute file</li>
+<li>A <tt class="docutils literal"><span class="pre">normal</span></tt> attribute located in a recipe</li>
+<li>An <tt class="docutils literal"><span class="pre">override</span></tt> attribute located in a cookbook attribute file</li>
+<li>An <tt class="docutils literal"><span class="pre">override</span></tt> attribute located in a recipe</li>
+<li>An <tt class="docutils literal"><span class="pre">override</span></tt> attribute located in a role</li>
+<li>An <tt class="docutils literal"><span class="pre">override</span></tt> attribute located in an environment</li>
+<li>A <tt class="docutils literal"><span class="pre">force_override</span></tt> attribute located in a cookbook attribute file</li>
+<li>A <tt class="docutils literal"><span class="pre">force_override</span></tt> attribute located in a recipe</li>
+<li>An <tt class="docutils literal"><span class="pre">automatic</span></tt> attribute identified by Ohai at the start of the chef-client run</li>
+</ol>
+<p>where the last attribute in the list is the one that is applied to the node.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The attribute precedence order for roles and environments is reversed for <tt class="docutils literal"><span class="pre">default</span></tt> and <tt class="docutils literal"><span class="pre">override</span></tt> attributes. The precedence order for <tt class="docutils literal"><span class="pre">default</span></tt> attributes is environment, then role. The precedence order for <tt class="docutils literal"><span class="pre">override</span></tt> attributes is role, then environment. Applying environment <tt class="docutils literal"><span class="pre">override</span></tt> attributes after role <tt class="docutils literal"><span class="pre">override</span></tt> attributes allows the same role to be used across multiple environments, yet ensuring that values can be set that are specific to each environment (when required). For example, the role for an application server may exist in all environments, yet one environment may use a database server that is different from other environments.</p>
+</div>
+<p>Attribute precedence, viewed from the same perspective as the overview diagram, where the numbers in the diagram match the order of attribute precedence:</p>
+<img alt="_images/overview_chef_attributes_precedence.png" src="_images/overview_chef_attributes_precedence.png" />
+<p>Attribute precedence, when viewed as a table:</p>
+<img alt="_images/overview_chef_attributes_table.png" src="_images/overview_chef_attributes_table.png" />
+<div class="section" id="whitelist-attributes">
+<h4>Whitelist Attributes<a class="headerlink" href="#whitelist-attributes" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When these settings are used, any attribute not defined in a whitelist will not be saved. Each attribute type is whitelisted independently of the other attribute types. For example, if <tt class="docutils literal"><span class="pre">automatic_attribute_whitelist</span></tt> defines attributes to be saved, but <tt class="docutils literal"><span class="pre">normal_attribute_whitelist</span></tt>, <tt class="docutils literal"><span class="pre">default_attribute_whitelist</span></tt>, and <tt class="docutils literal"><span class="pre">override_attribute_whitelist</span></tt> are not defined, then all normal, default and override attributes are saved, along with only the specified automatic attributes.</p>
+</div>
+<p>Attributes that should be saved by a node may be whitelisted in the client.rb file. The whitelist is a Hash of keys that specify each attribute to be saved.</p>
+<p>Attributes are whitelisted by attribute type, with each attribute type being whitelisted independently. Each attribute type&#8212;<tt class="docutils literal"><span class="pre">automatic</span></tt>, <tt class="docutils literal"><span class="pre">default</span></tt>, <tt class="docutils literal"><span class="pre">normal</span></tt>, and <tt class="docutils literal"><span class="pre">override</span></tt>&#8212;may define whitelists by using the following settings in the client.rb file:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">automatic_attribute_whitelist</span></tt></td>
+<td>A Hash that whitelists <tt class="docutils literal"><span class="pre">automatic</span></tt> attributes, preventing non-whitelisted attributes from being saved. For example: <tt class="docutils literal"><span class="pre">['network/interfaces/eth0']</span></tt>. Default value: all attributes are saved. If the Hash is empty, no attributes are saved.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">default_attribute_whitelist</span></tt></td>
+<td>A Hash that whitelists <tt class="docutils literal"><span class="pre">default</span></tt> attributes, preventing non-whitelisted attributes from being saved. For example: <tt class="docutils literal"><span class="pre">['filesystem/dev/disk0s2/size']</span></tt>. Default value: all attributes are saved. If the Hash is empty, no attributes are saved.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">normal_attribute_whitelist</span></tt></td>
+<td>A Hash that whitelists <tt class="docutils literal"><span class="pre">normal</span></tt> attributes, preventing non-whitelisted attributes from being saved. For example: <tt class="docutils literal"><span class="pre">['filesystem/dev/disk0s2/size']</span></tt>. Default value: all attributes are saved. If the Hash is empty, no attributes are saved.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">override_attribute_whitelist</span></tt></td>
+<td>A Hash that whitelists <tt class="docutils literal"><span class="pre">override</span></tt> attributes, preventing non-whitelisted attributes from being saved. For example: <tt class="docutils literal"><span class="pre">['map</span> <span class="pre">-</span> <span class="pre">autohome/size']</span></tt>. Default value: all attributes are saved. If the Hash is empty, no attributes are saved.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is recommended that only <tt class="docutils literal"><span class="pre">automatic_attribute_whitelist</span></tt> be used to whitelist attributes. This is primarily because automatic attributes generate the most data, but also that normal, default, and override attributes are typically much more important attributes and are more likely to cause issues if they are whitelisted incorrectly.</p>
+</div>
+<p>For example, normal attribute data similar to:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;filesystem&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;/dev/disk0s2&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;size&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;10mb&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;map - autohome&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;size&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;10mb&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;network&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;interfaces&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;eth0&quot;</span> <span class="o">=&gt;</span> <span class="p">{...},</span>
+      <span class="s2">&quot;eth1&quot;</span> <span class="o">=&gt;</span> <span class="p">{...},</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To whitelist the <tt class="docutils literal"><span class="pre">network</span></tt> attributes and prevent the other attributes from being saved, update the client.rb file:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">normal_attribute_whitelist</span> <span class="o">[</span><span class="s1">&#39;network/interfaces/&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>When a whitelist is defined, any attribute of that type that is not specified in that attribute whitelist <strong>will not</strong> be saved. So based on the previous whitelist for normal attributes, the <tt class="docutils literal"><span class="pre">filesystem</span></tt> and <tt class="docutils literal"><span class="pre">map</span> <span class="pre">-</span> <span class="pre">autohome</span></tt> attributes will not be saved, but the <tt class="docutils literal"><span class="pre">network</span></tt> attributes will.</p>
+<p>Leave the value empty to prevent all attributes of that attribute type from being saved:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">normal_attribute_whitelist</span> <span class="o">[]</span>
+</pre></div>
+</div>
+<p>For attributes that contain slashes (<tt class="docutils literal"><span class="pre">/</span></tt>) within the attribute value, such as the <tt class="docutils literal"><span class="pre">filesystem</span></tt> attribute <tt class="docutils literal"><span class="pre">'/dev/diskos2'</span></tt>, use an array. For example:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">automatic_attribute_whitelist</span> <span class="o">[[</span><span class="s1">&#39;filesystem&#39;</span><span class="p">,</span><span class="s1">&#39;/dev/diskos2&#39;</span><span class="o">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="role-formats">
+<h2>Role Formats<a class="headerlink" href="#role-formats" title="Permalink to this headline">¶</a></h2>
+<p>Role data is stored in two formats: as a Ruby file that contains domain-specific language and as JSON data.</p>
+<div class="section" id="ruby-dsl">
+<h3>Ruby DSL<a class="headerlink" href="#ruby-dsl" title="Permalink to this headline">¶</a></h3>
+<p>Ruby is a simple programming language:</p>
+<ul class="simple">
+<li>Chef uses Ruby as its reference language to define the patterns that are found in resources, recipes, and cookbooks</li>
+<li>Use these patterns to configure, deploy, and manage nodes across the network</li>
+</ul>
+<p>Ruby is also a powerful and complete programming language:</p>
+<ul class="simple">
+<li>Use the Ruby programming language to make decisions about what should happen to specific resources and recipes</li>
+<li>Extend Chef in any manner that your organization requires</li>
+</ul>
+<p>Domain-specific Ruby attributes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">default_attributes</span></tt></td>
+<td><p class="first">Optional. A set of attributes to be applied to all nodes, assuming the node does not already have a value for the attribute. This is useful for setting global defaults that can then be overridden for specific nodes. If more than one role attempts to set a default value for the same attribute, the last role applied is the role to set the attribute value. When nested attributes are present, they are preserved. For example, to specify that a node that has the attribute <tt class="docutils literal"><span class="pre">apache2</span></tt> should listen on ports 80 and 443 (unless ports are already specified):</p>
+<div class="last highlight-ruby"><div class="highlight"><pre><span></span><span class="n">default_attributes</span> <span class="s1">&#39;apache2&#39;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="s1">&#39;listen_ports&#39;</span> <span class="o">=&gt;</span> <span class="o">[</span> <span class="s1">&#39;80&#39;</span><span class="p">,</span> <span class="s1">&#39;443&#39;</span> <span class="o">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">description</span></tt></td>
+<td><p class="first">A description of the functionality that is covered. For example:</p>
+<div class="last highlight-ruby"><div class="highlight"><pre><span></span><span class="n">description</span> <span class="s1">&#39;The base role for systems that serve HTTP traffic&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">env_run_lists</span></tt></td>
+<td><p class="first">Optional. A list of environments, each specifying a recipe or a role to be applied to that environment. This setting must specify the <tt class="docutils literal"><span class="pre">_default</span></tt> environment. If the <tt class="docutils literal"><span class="pre">_default</span></tt> environment is set to <tt class="docutils literal"><span class="pre">[]</span></tt> or <tt class="docutils literal"><span class="pre">nil</span></tt>, then the run-list is empty. For example:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">env_run_lists</span> <span class="s1">&#39;prod&#39;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;recipe[apache2]&#39;</span><span class="o">]</span><span class="p">,</span>
+              <span class="s1">&#39;staging&#39;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;recipe[apache2::staging]&#39;</span>
+</pre></div>
+</div>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Using <tt class="docutils literal"><span class="pre">env_run_lists</span></tt> with roles is discouraged as it can be difficult to maintain over time. Instead, consider using multiple roles to define the required behavior.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">name</span></tt></td>
+<td><p class="first">A unique name within the organization. Each name must be made up of letters (upper- and lower-case), numbers, underscores, and hyphens: [A-Z][a-z][0-9] and [_-]. Spaces are not allowed. For example:</p>
+<div class="last highlight-ruby"><div class="highlight"><pre><span></span><span class="nb">name</span> <span class="s1">&#39;dev01-24&#39;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">override_attributes</span></tt></td>
+<td><p class="first">Optional. A set of attributes to be applied to all nodes, even if the node already has a value for an attribute. This is useful for ensuring that certain attributes always have specific values. If more than one role attempts to set an override value for the same attribute, the last role applied wins. When nested attributes are present, they are preserved. For example:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">override_attributes</span> <span class="s1">&#39;apache2&#39;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="s1">&#39;max_children&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;50&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The parameters in a Ruby file are Ruby method calls, so parentheses can be used to provide clarity when specifying numerous or deeply-nested attributes. For example:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">override_attributes</span><span class="p">(</span>
+  <span class="ss">:apache2</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:prefork</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:min_spareservers</span> <span class="o">=&gt;</span> <span class="s1">&#39;5&#39;</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="last highlight-ruby"><div class="highlight"><pre><span></span><span class="n">override_attributes</span><span class="p">(</span>
+  <span class="ss">:apache2</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:prefork</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:min_spareservers</span> <span class="o">=&gt;</span> <span class="s1">&#39;5&#39;</span> <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="ss">:tomcat</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:worker_threads</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">run_list</span></tt></td>
+<td><p class="first">A list of recipes and/or roles to be applied and the order in which they are to be applied. For example, the following run-list:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">run_list</span> <span class="s1">&#39;recipe[apache2]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;recipe[apache2::mod_ssl]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;role[monitor]&#39;</span>
+</pre></div>
+</div>
+<p class="last">would apply the <tt class="docutils literal"><span class="pre">apache2</span></tt> recipe first, then the <tt class="docutils literal"><span class="pre">apache2::mod_ssl</span></tt> recipe, and then the <tt class="docutils literal"><span class="pre">role[monitor]</span></tt> recipe.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A Ruby DSL file for each role must exist in the <tt class="docutils literal"><span class="pre">roles/</span></tt> subdirectory of the chef-repo. (If the repository does not have this subdirectory, then create it using knife.) Each Ruby file should have the .rb suffix. The complete roles Ruby DSL has the following syntax:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">name</span> <span class="s2">&quot;role_name&quot;</span>
+<span class="nx">description</span> <span class="s2">&quot;role_description&quot;</span>
+<span class="nx">run_list</span> <span class="s2">&quot;recipe[name]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[name::attribute]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[name::attribute]&quot;</span>
+<span class="nx">env_run_lists</span> <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;recipe[name]&quot;</span><span class="p">],</span> <span class="s2">&quot;environment_name&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;recipe[name::attribute]&quot;</span><span class="p">]</span>
+<span class="nx">default_attributes</span> <span class="s2">&quot;node&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;attribute&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;etc.&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<span class="nx">override_attributes</span> <span class="s2">&quot;node&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;attribute&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;etc.&quot;</span> <span class="p">]</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>where both default and override attributes are optional and at least one run-list (with at least one run-list item) is specified. For example, a role named <tt class="docutils literal"><span class="pre">webserver</span></tt> that has a run-list that defines actions for three different roles, and for certain roles takes extra steps (such as the <tt class="docutils literal"><span class="pre">apache2</span></tt> role listening on ports 80 and 443):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">name</span> <span class="s2">&quot;webserver&quot;</span>
+<span class="nx">description</span> <span class="s2">&quot;The base role for systems that serve HTTP traffic&quot;</span>
+<span class="nx">run_list</span> <span class="s2">&quot;recipe[apache2]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache2::mod_ssl]&quot;</span><span class="p">,</span> <span class="s2">&quot;role[monitor]&quot;</span>
+<span class="nx">env_run_lists</span> <span class="s2">&quot;prod&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;recipe[apache2]&quot;</span><span class="p">],</span> <span class="s2">&quot;staging&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;recipe[apache2::staging]&quot;</span><span class="p">],</span> <span class="s2">&quot;_default&quot;</span> <span class="o">=&gt;</span> <span class="p">[]</span>
+<span class="nx">default_attributes</span> <span class="s2">&quot;apache2&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;listen_ports&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span> <span class="s2">&quot;443&quot;</span> <span class="p">]</span> <span class="p">}</span>
+<span class="nx">override_attributes</span> <span class="s2">&quot;apache2&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;max_children&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;50&quot;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json">
+<h3>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
+<p>The JSON format for roles maps directly to the domain-specific Ruby format: same settings, attributes, and values, and a similar structure and organization. For example:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;webserver&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;chef_type&quot;</span><span class="o">:</span> <span class="s2">&quot;role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;json_class&quot;</span><span class="o">:</span> <span class="s2">&quot;Chef::Role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;default_attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;apache2&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;listen_ports&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;80&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;443&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;The base role for systems that serve HTTP traffic&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;run_list&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;recipe[apache2]&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;recipe[apache2::mod_ssl]&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;role[monitor]&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;env_run_lists&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;production&quot;</span> <span class="o">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;preprod&quot;</span> <span class="o">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;dev&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">&quot;role[base]&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;recipe[apache]&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;recipe[apache::copy_dev_configs]&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">&quot;role[base]&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;recipe[apache]&quot;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;override_attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;apache2&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;max_children&quot;</span><span class="o">:</span> <span class="s2">&quot;50&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The JSON format has two additional settings:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">chef_type</span></tt></td>
+<td>Always set this to <tt class="docutils literal"><span class="pre">role</span></tt>. Use this setting for any custom process that consumes role objects outside of Ruby.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">json_class</span></tt></td>
+<td>Always set this to <tt class="docutils literal"><span class="pre">Chef::Role</span></tt>. The chef-client uses this setting to auto-inflate a role object. If objects are being rebuilt outside of Ruby, ignore it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="manage-roles">
+<h2>Manage Roles<a class="headerlink" href="#manage-roles" title="Permalink to this headline">¶</a></h2>
+<p>There are several ways to manage roles:</p>
+<ul class="simple">
+<li>knife can be used to create, edit, view, list, tag, and delete roles.</li>
+<li>The Chef management console add-on can be used to create, edit, view, list, tag, and delete roles. In addition, role attributes can be modified and roles can be moved between environments.</li>
+<li>The chef-client can be used to manage role data using the command line and JSON files (that contain a hash, the elements of which are added as role attributes). In addition, the <tt class="docutils literal"><span class="pre">run_list</span></tt> setting allows roles and/or recipes to be added to the role.</li>
+<li>The open source Chef server can be used to manage role data using the command line and JSON files (that contain a hash, the elements of which are added as role attributes). In addition, the <tt class="docutils literal"><span class="pre">run_list</span></tt> setting allows roles and/or recipes to be added to the role.</li>
+<li>The Chef server API can be used to create and manage roles directly, although using knife and/or the Chef management console is the most common way to manage roles.</li>
+<li>The command line can also be used with JSON files and third-party services, such as Amazon EC2, where the JSON files can contain per-instance metadata stored in a file on-disk and then read by chef-solo or chef-client as required.</li>
+</ul>
+<p>By creating and editing files using the Ruby DSL or JSON, role data can be dynamically generated with the Ruby DSL. Roles created and edited using files are compatible with all versions of Chef, including chef-solo. Roles created and edited using files can be kept in version source control, which also keeps a history of what changed when. When roles are created and edited using files, they should not be managed using knife or the Chef management console, as changes will be overwritten.</p>
+<p>A run-list that is associated with a role can be edited using the Chef management console add-on. The canonical source of a role&#8217;s data is stored on the Chef server, which means that keeping role data in version source control can be challenging.</p>
+<p>When files are uploaded to a Chef server from a file and then edited using the Chef management console, if the file is edited and uploaded again, the changes made using the Chef management console user interface will be lost. The same is true with knife, in that if roles are created and managed using knife and then arbitrarily updated uploaded JSON data, that action will overwrite what has been done previously using knife. It is strongly recommended to keep to one process and not switch back and forth.</p>
+<div class="section" id="set-per-environment-run-lists">
+<h3>Set Per-environment Run-lists<a class="headerlink" href="#set-per-environment-run-lists" title="Permalink to this headline">¶</a></h3>
+<p>A per-environment run-list is a run-list that is associated with a role and a specific environment. More than one environment can be specified in a role, but each specific environment may be associated with only one run-list. If a run-list is not specified, the default run-list will be used. For example:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;webserver&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;default_attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;json_class&quot;</span><span class="o">:</span> <span class="s2">&quot;Chef::Role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;env_run_lists&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;production&quot;</span><span class="o">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;preprod&quot;</span><span class="o">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;role[base]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache::copy_test_configs]&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;dev&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;role[base]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache::copy_dev_configs]&quot;</span> <span class="p">]</span>
+    <span class="p">},</span>
+  <span class="s2">&quot;run_list&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;role[base]&quot;</span><span class="p">,</span> <span class="s2">&quot;recipe[apache]&quot;</span> <span class="p">],</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;The webserver role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;chef_type&quot;</span><span class="o">:</span> <span class="s2">&quot;role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;override_attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">webserver</span></tt> is the name of the role</li>
+<li><tt class="docutils literal"><span class="pre">env_run_lists</span></tt> is a hash of per-environment run-lists for <tt class="docutils literal"><span class="pre">production</span></tt>, <tt class="docutils literal"><span class="pre">preprod</span></tt>, <tt class="docutils literal"><span class="pre">test</span></tt>, and <tt class="docutils literal"><span class="pre">dev</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">production</span></tt> and <tt class="docutils literal"><span class="pre">preprod</span></tt> use the default run-list because they do not have a per-environment run-list</li>
+<li><tt class="docutils literal"><span class="pre">run_list</span></tt> defines the default run-list</li>
+</ul>
+</div>
+<div class="section" id="delete-from-run-list">
+<h3>Delete from Run-list<a class="headerlink" href="#delete-from-run-list" title="Permalink to this headline">¶</a></h3>
+<p>When an environment is deleted, it will remain within a run-list for a role until it is removed from that run-list. If a new environment is created that has an identical name to an environment that was deleted, a run-list that contains an old environment name will use the new one.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+
+
+          <div class="footer" role="contentinfo">
+                &copy; Copyright: This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+              This page is about: current version of Chef.
+            <a href="/feedback.html">Provide feedback on Chef documentation</a>.
+            </div>
+
+<!-- Start of Async Google Analytics Code -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6369228-7', 'auto', {'legacyCookieDomain': '.chef.io', 'allowLinker': true});
+  ga('send', 'pageview');
+
+  var trackOutboundLink = function(url) {
+    if (ga.q) {
+     document.location = url;
+    } else {
+      ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+    }
+  };
+</script>
+<!-- End of Async Google Analytics Code -->
+
+<!-- Start of Marketo Analytics Code -->
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('255-VFB-268');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+<!-- End of Marketo Analytics Code -->
+
+<!-- Start of DemandBase Analytics Code -->
+<script type="text/javascript">
+	(function(d,b,a,s,e){ var t = b.createElement(a),
+		fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e;
+		t.src=('https:'==document.location.protocol ? 'https://' : 'http://') + s;
+		fs.parentNode.insertBefore(t, fs); })
+	(window,document,'script','scripts.demandbase.com/zH7sZrWR.min.js','demandbase_js_lib');
+</script>
+<!-- End of DemandBase Analytics Code -->
+
+<!-- Start of Segment Analytics Code -->
+<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("RtyoRfLf1ZETiJcIfkKND3Wq1K1LhYHx");
+  analytics.page();
+  }}();
+</script>
+<!-- End of Segment Analytics Code -->
+
+
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,4421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <title>automate-ctl (executable) &mdash; Chef Docs</title>
+    <link rel="stylesheet" href="_static/chefv2.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:    './',
+    VERSION:     '',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '.html',
+    HAS_SOURCE:  true
+  };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/script.js"></script>
+
+    <link rel="top" title="Chef Docs" href="index.html" />
+    <link rel="next" title="kitchen (executable)" href="ctl_kitchen.html" />
+    <link rel="prev" title="Delivery CLI" href="ctl_delivery.html" /> 
+  </head>
+  <body role="document">
+    <div class="body-wrap">
+
+  <nav class="nav-main" role="navigation" data-topbar>
+    <div class="nav-inner">
+      <div class="left">
+        <h1>
+          <a href="https://learn.chef.io">
+            <span>Learn Chef</span>
+          </a>
+        </h1>
+      </div>
+
+      <i id="nav-icon" class="fa fa-bars"></i>
+      <a href="https://www.chef.io/">
+        <img id="logo" src="_static/chef_logo_v2.svg" onerror="_static/chef_logo_v2.png"/>
+      </a>
+
+      <ul class="nav-links links-main">
+        <li class="nav-link">
+          <a href="https://learn.chef.io/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-link">
+          <a href="https://learn.chef.io/skills/">Skills Library</a>
+        </li>
+        <li class="nav-link is-active">
+          <a href="https://docs.chef.io/">Docs</a>
+        </li>
+        <li class="nav-link">
+          <a href="https://www.chef.io/training/">Training</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+    <div class="document chef-docs">
+    <nav class="nav-docs">
+  <ul class="nav-docs-items" id="nav-docs-list">
+    <li class="main-item dark-item docs-search">
+      <form action="/search.html" method="get">
+        <input type="text" placeholder="Search" id="docs-search" name="q">
+        <input type="submit" class="submit-button" value="">
+        <i class="fa fa-search icon-search"></i>
+      </form>
+   
+
+    </li>
+    
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Overview"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-home icon-left"></i> Overview <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/platform_overview.html" title="Platform Overview">
+            Platform Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Community">
+            Community
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community.html" title="About the Community">
+                About the Community
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community_contributions.html" title="Contributing">
+                Contributing
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/community_guidelines.html" title="Guidelines">
+                Guidelines
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/style_guide.html" title="Docs Style Guide">
+                Docs Style Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Packages &amp; Platforms">
+            Packages &amp; Platforms
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/packages.html" title="Packages">
+                Packages
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/platforms.html" title="Platforms">
+                Platforms
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_omnitruck.html" title="Omnitruck API">
+                Omnitruck API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_license.html" title="Licensing">
+                Licensing
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Chef"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-tasks icon-left"></i> Chef <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Getting Started">
+            Getting Started
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_overview.html" title="Chef Overview">
+                Chef Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/quick_start.html" title="Quick Start">
+                Quick Start
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_system_requirements.html" title="System Requirements">
+                System Requirements
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Release Notes">
+                Release Notes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes.html" title="Chef Client">
+                    Chef Client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_chefdk.html" title="Chef Development Kit">
+                    Chef Development Kit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_server.html" title="Chef Server">
+                    Chef Server
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_push_jobs.html" title="Chef Push Jobs">
+                    Chef Push Jobs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/release_notes_ohai.html" title="Ohai">
+                    Ohai
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_deprecations_client.html" title="Deprecations">
+                Deprecations
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/learn-the-basics/" title="Learn the Basics">
+                Learn the Basics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/manage-a-node/" title="Manage a Node">
+                Manage a Node
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/local-development/" title="Get started with Test Kitchen">
+                Get started with Test Kitchen
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/manage-a-web-app/" title="Develop a web app cookbook">
+                Develop a web app cookbook
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/inspec/" title="Verify with InSpec">
+                Verify with InSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/chefspec/" title="Unit test with ChefSpec">
+                Unit test with ChefSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/verify-style/" title="Verify code style">
+                Verify code style
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/refactor-web-app-cookbook/" title="Refactor the web app cookbook">
+                Refactor the web app cookbook
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Concepts">
+            Concepts
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/workstation.html" title="Workstation">
+                Workstation
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_repo.html" title="chef-repo">
+                chef-repo
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/nodes.html" title="Nodes">
+                Nodes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_client.html" title="chef-client">
+                chef-client
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_components.html" title="Server">
+                Server
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_search.html" title="Search">
+                Search
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbooks.html" title="Cookbooks">
+                Cookbooks
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/handlers.html" title="Handlers">
+                Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/manage.html" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Policy">
+                Policy
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/policy.html" title="About Policy">
+                    About Policy
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/data_bags.html" title="Data Bags">
+                    Data Bags
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/environments.html" title="Environments">
+                    Environments
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/roles.html" title="Roles">
+                    Roles
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/push_jobs.html" title="Push Jobs">
+                Push Jobs
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/run_lists.html" title="Run-lists">
+                Run-lists
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Security">
+                Security
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/auth.html#authentication" title="Authentication">
+                    Authentication
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/auth.html#authorization" title="Authorization">
+                    Authorization
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_private_keys.html" title="Private Keys">
+                    Private Keys
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_client.html#run-in-fips-mode" title="FIPS-mode">
+                    FIPS-mode
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket.html#public-supermarket" title="Public Supermarket">
+                    Public Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket.html#private-supermarket" title="Private Supermarket">
+                    Private Supermarket
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/windows.html" title="Microsoft Windows">
+                Microsoft Windows
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Appendix">
+                Appendix
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/environment_variables.html" title="Env Variables">
+                    Env Variables
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/errors.html" title="Troubleshooting">
+                    Troubleshooting
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/glossary.html" title="Glossary">
+                    Glossary
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Setup">
+            Setup
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/proxies.html" title="Proxies">
+                Proxies
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_dk.html" title="Workstation">
+                Workstation
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Nodes">
+                Nodes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/install_bootstrap.html" title="Install via Bootstrap">
+                    Install via Bootstrap
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_omnibus.html" title="Install via URL">
+                    Install via URL
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_windows.html" title="Install on Windows">
+                    Install on Windows
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/junos.html" title="Install on Junos OS">
+                    Install on Junos OS
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_client.html" title="chef-client (executable)">
+                    chef-client (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_client.html" title="client.rb">
+                    client.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/upgrade_client.html" title="Upgrades">
+                    Upgrades
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_client_security.html" title="Security">
+                    Security
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Server">
+                Server
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="https://manage.chef.io/signup" title="Hosted Chef Server">
+                    Hosted Chef Server
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_server.html#standalone" title="Install Standalone">
+                    Install Standalone
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_server_ha.html" title="Install High Availability">
+                    Install High Availability
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/aws_marketplace.html" title="AWS Marketplace">
+                    AWS Marketplace
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/azure_portal.html" title="Microsoft Azure">
+                    Microsoft Azure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/openstack.html" title="Openstack">
+                    Openstack
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="https://supermarket.chef.io" title="Public Supermarket">
+                    Public Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html" title="Install Private Supermarket">
+                    Install Private Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html#customize-supermarket" title="Customize Supermarket">
+                    Customize Supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/install_supermarket.html#run-supermarket-in-kitchen" title="Run in Test Kitchen">
+                    Run in Test Kitchen
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_server.html#install" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_push_jobs.html" title="Push Jobs">
+                Push Jobs
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Integrations">
+                Integrations
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/integrate_compliance_chef_server.html" title="w/Chef Compliance">
+                    w/Chef Compliance
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/uninstall.html" title="Uninstall">
+                Uninstall
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Cookbook Reference">
+            Cookbook Reference
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbooks.html" title="About Cookbooks">
+                About Cookbooks
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/attributes.html" title="Attributes">
+                Attributes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/definitions.html" title="Definitions">
+                Definitions
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/files.html" title="Files">
+                Files
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/libraries.html" title="Libraries">
+                Libraries
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Recipes">
+                Recipes
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/recipes.html" title="About Recipes">
+                    About Recipes
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/debug.html" title="Debug Recipes, Client Runs">
+                    Debug Recipes, Client Runs
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Recipe DSL">
+                Recipe DSL
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#attribute" title="attribute?">
+                    attribute?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#control" title="control">
+                    control
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#control-group" title="control_group">
+                    control_group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#cookbook-name" title="cookbook_name">
+                    cookbook_name
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#data-bag" title="data_bag">
+                    data_bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#data-bag-item" title="data_bag_item">
+                    data_bag_item
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#platform" title="platform?">
+                    platform?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#platform-family" title="platform_family?">
+                    platform_family?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#reboot-pending" title="reboot_pending?">
+                    reboot_pending?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#recipe-name" title="recipe_name">
+                    recipe_name
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-data-exists" title="registry_data_exists?">
+                    registry_data_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-get-subkeys" title="registry_get_subkeys">
+                    registry_get_subkeys
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-get-values" title="registry_get_values">
+                    registry_get_values
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-has-subkeys" title="registry_has_subkeys?">
+                    registry_has_subkeys?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-key-exists" title="registry_key_exists?">
+                    registry_key_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#registry-value-exists" title="registry_value_exists?">
+                    registry_value_exists?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#resources" title="resources">
+                    resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#search" title="search">
+                    search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out" title="shell_out">
+                    shell_out
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out-bang" title="shell_out!">
+                    shell_out!
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#shell-out-with-systems-locale" title="shell_out_with_systems_locale">
+                    shell_out_with_systems_locale
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="tag">
+                    tag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="tagged?">
+                    tagged?
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#tag-tagged-untag" title="untag">
+                    untag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#value-for-platform" title="value_for_platform">
+                    value_for_platform
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#value-for-platform-family" title="value_for_platform_family">
+                    value_for_platform_family
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/dsl_recipe.html#helpers" title="Windows Platform Helpers">
+                    Windows Platform Helpers
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Resources">
+                Resources
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/resource.html" title="About Resources">
+                    About Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_common.html" title="Common Functionality">
+                    Common Functionality
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/custom_resources.html" title="Custom Resources">
+                    Custom Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resources.html" title="All Resources (Single Page)">
+                    All Resources (Single Page)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_package.html" title="apt_package">
+                    apt_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_repository.html" title="apt_repository">
+                    apt_repository
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_apt_update.html" title="apt_update">
+                    apt_update
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_bash.html" title="bash">
+                    bash
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_batch.html" title="batch">
+                    batch
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_bff_package.html" title="bff_package">
+                    bff_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_breakpoint.html" title="breakpoint">
+                    breakpoint
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cab_package.html" title="cab_package">
+                    cab_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_gem.html" title="chef_gem">
+                    chef_gem
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_acl.html" title="chef_acl">
+                    chef_acl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_client.html" title="chef_client">
+                    chef_client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_container.html" title="chef_container">
+                    chef_container
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_data_bag_item.html" title="chef_data_bag_item">
+                    chef_data_bag_item
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_data_bag.html" title="chef_data_bag">
+                    chef_data_bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_environment.html" title="chef_environment">
+                    chef_environment
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_group.html" title="chef_group">
+                    chef_group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_handler.html" title="chef_handler">
+                    chef_handler
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_mirror.html" title="chef_mirror">
+                    chef_mirror
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_node.html" title="chef_node">
+                    chef_node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_organization.html" title="chef_organization">
+                    chef_organization
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_role.html" title="chef_role">
+                    chef_role
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chef_user.html" title="chef_user">
+                    chef_user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_chocolatey_package.html" title="chocolatey_package">
+                    chocolatey_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cookbook_file.html" title="cookbook_file">
+                    cookbook_file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_cron.html" title="cron">
+                    cron
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_csh.html" title="csh">
+                    csh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_deploy.html" title="deploy">
+                    deploy
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_directory.html" title="directory">
+                    directory
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dpkg_package.html" title="dpkg_package">
+                    dpkg_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dsc_resource.html" title="dsc_resource">
+                    dsc_resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_dsc_script.html" title="dsc_script">
+                    dsc_script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_easy_install_package.html" title="easy_install_package">
+                    easy_install_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_env.html" title="env">
+                    env
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_erlang_call.html" title="erl_call">
+                    erl_call
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_execute.html" title="execute">
+                    execute
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_file.html" title="file">
+                    file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_freebsd_package.html" title="freebsd_package">
+                    freebsd_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_gem_package.html" title="gem_package">
+                    gem_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_git.html" title="git">
+                    git
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_group.html" title="group">
+                    group
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_homebrew_package.html" title="homebrew_package">
+                    homebrew_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_http_request.html" title="http_request">
+                    http_request
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ifconfig.html" title="ifconfig">
+                    ifconfig
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ips_package.html" title="ips_package">
+                    ips_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ksh.html" title="ksh">
+                    ksh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_launchd.html" title="launchd">
+                    launchd
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_link.html" title="link">
+                    link
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_log.html" title="log">
+                    log
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_macports_package.html" title="macports_package">
+                    macports_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_mdadm.html" title="mdadm">
+                    mdadm
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_mount.html" title="mount">
+                    mount
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_msu_package.html" title="msu_package">
+                    msu_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ohai.html" title="ohai">
+                    ohai
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_openbsd_package.html" title="openbsd_package">
+                    openbsd_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_osx_profile.html" title="osx_profile">
+                    osx_profile
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_package.html" title="package">
+                    package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_pacman_package.html" title="pacman_package">
+                    pacman_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_paludis_package.html" title="paludis_package">
+                    paludis_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_perl.html" title="perl">
+                    perl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_portage_package.html" title="portage_package">
+                    portage_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_powershell_script.html" title="powershell_script">
+                    powershell_script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_private_key.html" title="private_key">
+                    private_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_public_key.html" title="public_key">
+                    public_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_python.html" title="python">
+                    python
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_reboot.html" title="reboot">
+                    reboot
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_registry_key.html" title="registry_key">
+                    registry_key
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_remote_directory.html" title="remote_directory">
+                    remote_directory
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_remote_file.html" title="remote_file">
+                    remote_file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_route.html" title="route">
+                    route
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_rpm_package.html" title="rpm_package">
+                    rpm_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ruby.html" title="ruby">
+                    ruby
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_ruby_block.html" title="ruby_block">
+                    ruby_block
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_script.html" title="script">
+                    script
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_service.html" title="service">
+                    service
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_smartos_package.html" title="smartos_package">
+                    smartos_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_solaris_package.html" title="solaris_package">
+                    solaris_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_subversion.html" title="subversion">
+                    subversion
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_systemd_unit.html" title="systemd_unit">
+                    systemd_unit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_template.html" title="template">
+                    template
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_user.html" title="user">
+                    user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_windows_package.html" title="windows_package">
+                    windows_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_windows_service.html" title="windows_service">
+                    windows_service
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_yum.html" title="yum_package">
+                    yum_package
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_yum_repository.html" title="yum_repository">
+                    yum_repository
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_examples.html" title="Examples (by Resource)">
+                    Examples (by Resource)
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/templates.html" title="Templates">
+                Templates
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbook_repo.html" title="Cookbook Repo">
+                Cookbook Repo
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_metadata.html" title="metadata.rb">
+                metadata.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookbook_versions.html" title="Cookbook Versions">
+                Cookbook Versions
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ruby.html" title="Ruby">
+                Ruby
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Chef DK">
+            Chef DK
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/about_chefdk.html" title="About the ChefDK">
+                About the ChefDK
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/berkshelf.html" title="Berkshelf">
+                Berkshelf
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_apply.html" title="chef-apply (executable)">
+                chef-apply (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_shell.html" title="chef-shell (executable)">
+                chef-shell (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="chef (executable)">
+                chef (executable)
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-env" title="chef env">
+                    chef env
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-exec" title="chef exec">
+                    chef exec
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-gem" title="chef gem">
+                    chef gem
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-app" title="chef generate app">
+                    chef generate app
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-attribute" title="chef generate attribute">
+                    chef generate attribute
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-cookbook" title="chef generate cookbook">
+                    chef generate cookbook
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-file" title="chef generate file">
+                    chef generate file
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-lwrp" title="chef generate lwrp">
+                    chef generate lwrp
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-recipe" title="chef generate recipe">
+                    chef generate recipe
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-repo" title="chef generate repo">
+                    chef generate repo
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-generate-template" title="chef generate template">
+                    chef generate template
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-provision" title="chef provision">
+                    chef provision
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-shell-init" title="chef shell-init">
+                    chef shell-init
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef.html#chef-verify" title="chef verify">
+                    chef verify
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Chef Solo">
+                Chef Solo
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/chef_solo.html" title="About Chef Solo">
+                    About Chef Solo
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_chef_solo.html" title="chef-solo (executable)">
+                    chef-solo (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_solo.html" title="solo.rb">
+                    solo.rb
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_shell.html" title="chef-shell (executable)">
+                chef-shell (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_client.html#run-in-local-mode" title="chef-zero (local mode)">
+                chef-zero (local mode)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_vault.html" title="chef-vault">
+                chef-vault
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chefspec.html" title="ChefSpec">
+                ChefSpec
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Configuration">
+                Configuration
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb.html" title="config.rb">
+                    config.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_client.html#d-directories" title="Multiple Config Files">
+                    Multiple Config Files
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/cookstyle.html" title="cookstyle">
+                cookstyle
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_delivery.html" title="Delivery CLI">
+                Delivery CLI
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/foodcritic.html" title="Foodcritic">
+                Foodcritic
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Test Kitchen">
+                Test Kitchen
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/kitchen.html" title="About Test Kitchen">
+                    About Test Kitchen
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_kitchen.html" title="kitchen (executable)">
+                    kitchen (executable)
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_yml_kitchen.html" title=".kitchen.yml">
+                    .kitchen.yml
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_kitchen_vagrant.html" title="kitchen-vagrant">
+                    kitchen-vagrant
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Knife">
+                Knife
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/knife.html" title="About Knife">
+                    About Knife
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_common_options.html" title="Common Options">
+                    Common Options
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_using.html" title="Using Knife">
+                    Using Knife
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_knife.html" title="knife.rb">
+                    knife.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_bootstrap.html" title="knife bootstrap">
+                    knife bootstrap
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_client.html" title="knife client">
+                    knife client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_configure.html" title="knife configure">
+                    knife configure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_cookbook.html" title="knife cookbook">
+                    knife cookbook
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_cookbook_site.html" title="knife cookbook site">
+                    knife cookbook site
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_data_bag.html" title="knife data bag">
+                    knife data bag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_delete.html" title="knife delete">
+                    knife delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_deps.html" title="knife deps">
+                    knife deps
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_diff.html" title="knife diff">
+                    knife diff
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_download.html" title="knife download">
+                    knife download
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_edit.html" title="knife edit">
+                    knife edit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_environment.html" title="knife environment">
+                    knife environment
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_exec.html" title="knife exec">
+                    knife exec
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_list.html" title="knife list">
+                    knife list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_node.html" title="knife node">
+                    knife node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_raw.html" title="knife raw">
+                    knife raw
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_recipe_list.html" title="knife recipe list">
+                    knife recipe list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_role.html" title="knife role">
+                    knife role
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_search.html" title="knife search">
+                    knife search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_serve.html" title="knife serve">
+                    knife serve
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_show.html" title="knife show">
+                    knife show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssh.html" title="knife ssh">
+                    knife ssh
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssl_check.html" title="knife ssl_check">
+                    knife ssl_check
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_ssl_fetch.html" title="knife ssl_fetch">
+                    knife ssl_fetch
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_status.html" title="knife status">
+                    knife status
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_tag.html" title="knife tag">
+                    knife tag
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_upload.html" title="knife upload">
+                    knife upload
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_user.html" title="knife user">
+                    knife user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/knife_xargs.html" title="knife xargs">
+                    knife xargs
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="knife opc">
+                knife opc
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html" title="About knife opc">
+                    About knife opc
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#knife-rb-configuration" title="knife.rb Configuration">
+                    knife.rb Configuration
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-list" title="opc user list">
+                    opc user list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-show" title="opc user show">
+                    opc user show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-create" title="opc user create">
+                    opc user create
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-delete" title="opc user delete">
+                    opc user delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-edit" title="opc user edit">
+                    opc user edit
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-user-password" title="opc user password">
+                    opc user password
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-list" title="opc org list">
+                    opc org list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-show" title="opc org show">
+                    opc org show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-create" title="opc org create">
+                    opc org create
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-delete" title="opc org delete">
+                    opc org delete
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-user-add" title="opc org user add">
+                    opc org user add
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_opc.html#opc-org-user-remove" title="opc org user remove">
+                    opc org user remove
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_spork.html" title="knife spork">
+                knife spork
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="knife supermarket">
+                knife supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html" title="About knife supermarket">
+                    About knife supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#download" title="supermarket download">
+                    supermarket download
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#install" title="supermarket install">
+                    supermarket install
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#list" title="supermarket list">
+                    supermarket list
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#search" title="supermarket search">
+                    supermarket search
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#share" title="supermarket share">
+                    supermarket share
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#show" title="supermarket show">
+                    supermarket show
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html#unshare" title="supermarket unshare">
+                    supermarket unshare
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Ohai">
+                Ohai
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ohai.html" title="About Ohai">
+                    About Ohai
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_ohai.html" title="ohai (executable)">
+                    ohai (executable)
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Policyfile">
+                Policyfile
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/policyfile.html" title="About Policyfile">
+                    About Policyfile
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_policyfile.html" title="Policyfile.rb">
+                    Policyfile.rb
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Provisioning">
+                Provisioning
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning.html" title="About Provisioning">
+                    About Provisioning
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_load_balancer.html" title="load_balancer resource">
+                    load_balancer resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine.html" title="machine resource">
+                    machine resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_batch.html" title="machine_batch resource">
+                    machine_batch resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_execute.html" title="machine_execute resource">
+                    machine_execute resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_file.html" title="machine_file resource">
+                    machine_file resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/resource_machine_image.html" title="machine_image resource">
+                    machine_image resource
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_aws.html" title="AWS Driver Resources">
+                    AWS Driver Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_fog.html" title="Fog Driver Resources">
+                    Fog Driver Resources
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/provisioning_vagrant.html" title="Vagrant Driver Resources">
+                    Vagrant Driver Resources
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_push_jobs_client.html" title="push-jobs-client (executable)">
+                push-jobs-client (executable)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/rubocop.html" title="Rubocop">
+                Rubocop
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Managing the Server">
+            Managing the Server
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/runbook.html" title="Runbook (Single Page)">
+                Runbook (Single Page)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_backup_restore.html" title="Backup &amp; Restore">
+                Backup &amp; Restore
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_data.html" title="Data Storage">
+                Data Storage
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_firewalls_and_ports.html" title="Firewalls &amp; Ports">
+                Firewalls &amp; Ports
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_ldap.html" title="Active Directory &amp; LDAP">
+                Active Directory &amp; LDAP
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_logs.html" title="Log Files">
+                Log Files
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_monitor.html" title="Monitor">
+                Monitor
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_orgs.html" title="Organizations &amp; Groups">
+                Organizations &amp; Groups
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/secrets.html" title="Secrets">
+                Secrets
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_security.html" title="Security">
+                Security
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_services.html" title="Services">
+                Services
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_tuning.html" title="Tuning">
+                Tuning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_server.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_server_ha_v2.html" title="Upgrade HA Cluster">
+                Upgrade HA Cluster
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_users.html" title="Users">
+                Users
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_server.html" title="chef-server-ctl">
+                chef-server-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_chef_backend.html" title="chef-backend-ctl">
+                chef-backend-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_server.html" title="chef-server.rb">
+                chef-server.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_opscode_expander.html" title="opscode-expander-ctl">
+                opscode-expander-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_chef_server.html" title="Chef Server API">
+                Chef Server API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Push Jobs">
+                Push Jobs
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_push_jobs.html" title="knife push jobs">
+                    knife push jobs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_push_jobs_client.html" title="push-jobs-client">
+                    push-jobs-client
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_push_jobs_client.html" title="push-jobs-client.rb">
+                    push-jobs-client.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_push_jobs_server.html" title="push-jobs-server.rb">
+                    push-jobs-server.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/api_push_jobs.html" title="Push Jobs API">
+                    Push Jobs API
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_sent_events.html" title="Server Sent Events">
+                    Server Sent Events
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Supermarket">
+                Supermarket
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_logs.html" title="Log Files">
+                    Log Files
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_monitor.html" title="Monitoring">
+                    Monitoring
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_supermarket.html" title="supermarket.rb">
+                    supermarket.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/plugin_knife_supermarket.html" title="knife supermarket">
+                    knife supermarket
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_supermarket.html" title="supermarket-ctl">
+                    supermarket-ctl
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/supermarket_api.html" title="Supermarket API">
+                    Supermarket API
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Management Console">
+                Management Console
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/server_configure_saml.html" title="Configure SAML">
+                    Configure SAML
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_clients.html" title="Clients">
+                    Clients
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_cookbooks.html" title="Cookbooks">
+                    Cookbooks
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_data_bags.html" title="Data Bags">
+                    Data Bags
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_environments.html" title="Environments">
+                    Environments
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_nodes.html" title="Nodes">
+                    Nodes
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_manage_roles.html" title="Roles">
+                    Roles
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/server_users.html#chef-manage" title="Users">
+                    Users
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/config_rb_manage.html" title="manage.rb">
+                    manage.rb
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_manage.html" title="chef-manage-ctl">
+                    chef-manage-ctl
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Habitat"> <!-- if item has custom image -->
+
+        <img class="icon-left" src="./_static/habitat-mark.png"></img> Habitat <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/habitat.html" title="Habitat Overview">
+            Habitat Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://www.habitat.sh/tutorials/getting-started-overview" title="Getting started">
+                Getting started
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="InSpec"> <!-- if item has custom image -->
+
+        <img class="icon-left" src="./_static/inspec_logo.png"></img> InSpec <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/inspec.html" title="InSpec Overview">
+            InSpec Overview
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Chef Automate"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-cogs icon-left"></i> Chef Automate <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Getting Started">
+            Getting Started
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_automate.html" title="Chef Automate Overview">
+                Chef Automate Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_chef_automate.html" title="Installation Guide">
+                Installation Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Tutorials">
+            Tutorials
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/install" title="Get Started">
+                Get Started
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/visibility" title="Visibility into Infrastructure">
+                Visibility into Infrastructure
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/automate/deploy-cookbook/" title="Deploy with Chef Automate">
+                Deploy with Chef Automate
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/compliance-assess" title="Assess for Compliance">
+                Assess for Compliance
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="https://learn.chef.io/tutorials/compliance-remediate" title="Remediate Compliance Failures">
+                Remediate Compliance Failures
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Setup">
+            Setup
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_pipeline.html" title="Configure a Pipeline">
+                Configure a Pipeline
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_json_delivery.html" title="Configure a Project">
+                Configure a Project
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/setup_visibility_chef_automate.html" title="Configure Data Collection">
+                Configure Data Collection
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Concepts">
+            Concepts
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2">
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Workflow">
+                Workflow
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/workflow.html" title="Workflow Overview">
+                    Workflow Overview
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_manage_dependencies.html" title="Manage Dependencies">
+                    Manage Dependencies
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/visibility.html" title="Visibility Overview">
+                Visibility Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/compliance.html" title="Compliance Overview">
+                Compliance Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/ctl_delivery.html" title="Delivery CLI">
+            Delivery CLI
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Integrations">
+            Integrations
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_bitbucket.html" title="w/Bitbucket">
+                w/Bitbucket
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_smtp.html" title="w/Email (SMTP)">
+                w/Email (SMTP)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_github.html" title="w/GitHub">
+                w/GitHub
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_ldap.html" title="w/LDAP">
+                w/LDAP
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_chef_automate_saml.html" title="w/SAML">
+                w/SAML
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_delivery_slack.html" title="w/Slack">
+                w/Slack
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Cookbooks">
+            Cookbooks
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_build_cookbook.html" title="build-cookbook (cookbook)">
+                build-cookbook (cookbook)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_truck.html" title="delivery-truck (cookbook)">
+                delivery-truck (cookbook)
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/publish_cookbooks_multiple_servers.html" title="Publish to Multiple Chef Servers">
+                Publish to Multiple Chef Servers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/dsl_delivery.html" title="Workflow DSL">
+            Workflow DSL
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/job_dispatch.html" title="Job Dispatch">
+            Job Dispatch
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Managing the Server">
+            Managing the Server
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2">
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="Backups">
+                Backups
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#configuration" title="Configuration">
+                    Configuration
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#create-backups" title="Create Backups">
+                    Create Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#list-backups" title="List Backups">
+                    List Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#delete-backups" title="Delete Backups">
+                    Delete Backups
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/delivery_server_backup.html#restore-backups" title="Restore Backups">
+                    Restore Backups
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/scaling_capacity_planning_chef_automate.html" title="Capacity Planning">
+                Capacity Planning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_delivery.html" title="Chef Automate API">
+                Chef Automate API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems -->
+
+            <li class="has-sub-items">
+              <div class="has-sub-items-content" title="automate-ctl">
+                automate-ctl
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <ul class="sub-items level-3">
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#cleanse" title="cleanse">
+                    cleanse
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#create-enterprise" title="create-enterprise">
+                    create-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#create-user" title="create-user">
+                    create-user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-application" title="delete-application">
+                    delete-application
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-enterprise" title="delete-enterprise">
+                    delete-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-project" title="delete-project">
+                    delete-project
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-user" title="delete-user">
+                    delete-user
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-visibility-node" title="delete-visibility-node">
+                    delete-visibility-node
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#delete-visibility-node-by-id" title="delete-visibility-node-by-id">
+                    delete-visibility-node-by-id
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#gather-logs" title="gather-logs">
+                    gather-logs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#help" title="help">
+                    help
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#install-runner" title="install-runner">
+                    install-runner
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-applications" title="list-applications">
+                    list-applications
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-enterprises" title="list-enterprises">
+                    list-enterprises
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#list-users" title="list-users">
+                    list-users
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#migrate-change-description" title="migrate-change-description">
+                    migrate-change-description
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#migrate-patchset-diffs" title="migrate-patchset-diffs">
+                    migrate-patchset-diffs
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#preflight-check" title="preflight-check">
+                    preflight-check
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#reconfigure" title="reconfigure">
+                    reconfigure
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#rename-enterprise" title="rename-enterprise">
+                    rename-enterprise
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#reset-password" title="reset-password">
+                    reset-password
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#restore-backup" title="restore-backup">
+                    restore-backup
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#revoke-token" title="revoke-token">
+                    revoke-token
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#show-config" title="show-config">
+                    show-config
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#uninstall" title="uninstall">
+                    uninstall
+                  </a>
+                </li>
+
+                <li>
+                  <a class="nav-docs-link" href="/ctl_delivery_server.html#update-project-hooks" title="update-project-hooks">
+                    update-project-hooks
+                  </a>
+                </li> <!-- /for subItem3 in subItem2.subItems -->
+
+              </ul>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_delivery.html" title="delivery.rb">
+                delivery.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_server_disaster_recovery.html" title="Disaster Recovery">
+                Disaster Recovery
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/elasticsearch_and_kibana_auth.html" title="Elasticsearch &amp; Kibana Auth">
+                Elasticsearch &amp; Kibana Auth
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/manage_indices_chef_automate.html" title="Manage Elasticsearch Indices">
+                Manage Elasticsearch Indices
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/search_query_chef_automate.html" title="Node Search Reference">
+                Node Search Reference
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_manage_secrets.html" title="Secrets">
+                Secrets
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/stream_data_chef_automate.html" title="Stream Data">
+                Stream Data
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_server_tuning.html" title="Tuning">
+                Tuning
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_chef_automate.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/delivery_users_and_roles.html" title="Users &amp; Roles">
+                Users &amp; Roles
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Compliance scanner">
+            Compliance scanner
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/compliance.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/release_notes_compliance.html" title="Release Notes">
+                Release Notes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_compliance.html" title="Installation Guide">
+                Installation Guide
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_compliance_chef_server.html" title="Integrate w/Chef Server">
+                Integrate w/Chef Server
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/integrate_compliance_chef_automate.html" title="Integrate w/Chef Automate">
+                Integrate w/Chef Automate
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_compliance.html" title="Upgrade Compliance">
+                Upgrade Compliance
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_compliance.html" title="chef-compliance.rb">
+                chef-compliance.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_compliance.html" title="Chef Compliance API">
+                Chef Compliance API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/aws_opsworks_chef_automate.html" title="AWS OpsWorks for Chef Automate">
+            AWS OpsWorks for Chef Automate
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/troubleshooting_chef_automate.html" title="Troubleshooting">
+            Troubleshooting
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Legacy"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-hdd-o icon-left"></i> Legacy <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items">
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Analytics">
+            Analytics
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/release_notes_analytics.html" title="Release Notes">
+                Release Notes
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_analytics.html" title="Install Standalone">
+                Install Standalone
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/actions.html" title="Web UI">
+                Web UI
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_webui_tasks.html" title="Management Console">
+                Management Console
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_nodes_view.html" title="Nodes View">
+                Nodes View
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics.html#integrations" title="Integrations">
+                Integrations
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_splunk.html" title="Splunk">
+                Splunk
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_rules.html" title="Rules">
+                Rules
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/analytics_monitor.html" title="Monitor">
+                Monitor
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/upgrade_analytics.html" title="Upgrades">
+                Upgrades
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/chef_client_analytics.html" title="Chef Client for Analytics">
+                Chef Client for Analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_analytics.html" title="opscode-analytics-ctl">
+                opscode-analytics-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_analytics.html" title="opscode-analytics.rb">
+                opscode-analytics.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_analytics.html" title="knife-analytics">
+                knife-analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_analytics.html" title="Analytics API">
+                Analytics API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/dsl_recipe_analytics.html" title="Recipe DSL for Analytics">
+                Recipe DSL for Analytics
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Reporting">
+            Reporting
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/reporting.html" title="Overview">
+                Overview
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/install_reporting.html" title="Install Reporting">
+                Install Reporting
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/server_manage_reports.html" title="View Reports">
+                View Reports
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_reporting.html" title="knife reporting">
+                knife reporting
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ctl_reporting.html" title="opscode-reporting-ctl">
+                opscode-reporting-ctl
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/config_rb_reporting.html" title="opscode-reporting.rb">
+                opscode-reporting.rb
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/api_reporting.html" title="Reporting API">
+                Reporting API
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li>
+    <li class="main-item has-sub-items">
+
+      <div class="has-sub-items-content" title="Extension APIs"> <!-- else item does not have custom image and should use FontAwesome icon -->
+
+        <i class="fa fa-clone icon-left"></i> Extension APIs <!-- endif -->
+
+        <i class="fa fa-chevron-down"></i>
+      </div>
+
+
+      <ul class="sub-items"> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/dsl_compliance.html" title="Compliance DSL">
+            Compliance DSL
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Handlers">
+            Handlers
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/handlers.html#custom-handlers" title="Custom Handlers">
+                Custom Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/dsl_handler.html" title="Handler DSL">
+                Handler DSL
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#handlers" title="Community Handlers">
+                Community Handlers
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Knife Plugins">
+            Knife Plugins
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife.html" title="About Cloud Plugins">
+                About Cloud Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_knife_custom.html" title="Custom Plugins">
+                Custom Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#knife" title="Community Plugins">
+                Community Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems -->
+
+        <li class="has-sub-items">
+          <div class="has-sub-items-content" title="Ohai Plugins">
+            Ohai Plugins
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="sub-items level-2"> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/ohai_custom.html" title="Custom Plugins">
+                Custom Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem2 does not have sub items -->
+
+            <li>
+              <a class="nav-docs-link" href="/plugin_community.html#ohai" title="Community Plugins">
+                Community Plugins
+              </a>
+            </li> <!-- /if subItem2.hasSubItems --> <!-- /for subItem2 in subItem.subItems -->
+
+          </ul>
+        
+        </li> <!-- /if subItem2.hasSubItems --> <!-- if subItem does not have sub items  -->
+
+        <li>
+          <a class="nav-docs-link" href="/plugin_community.html#chef-client" title="Chef Client Plugins">
+            Chef Client Plugins
+          </a>
+        </li>
+
+         <!-- /if subItem2.hasSubItems --> <!-- /for subItem in subItems -->
+
+      </ul>
+    </li> <!-- /for item in navItems -->
+    
+    <li class="main-item dark-item">
+      <a href="https://github.com/chef/chef-web-docs" title="Available on GitHub">
+        <i class="fa fa-github icon-left"></i>
+        Available on GitHub
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://www.chef.io/chef/get-chef">
+        <i class="fa fa-download icon-left"></i>
+        Get Chef
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs.chef.io/feedback.html">
+        <i class="fa fa-commenting icon-left"></i>
+        Send Feedback
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://www.chef.io/support/">
+        <i class="fa fa-support icon-left"></i>
+        Support
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs.chef.io/index.html">
+        <i class="fa fa-map-o icon-left"></i>
+        Site Map
+      </a>
+    </li>
+    <li class="main-item dark-item">
+      <a href="https://docs-archive.chef.io/">
+        <i class="fa fa-archive icon-left"></i>
+        Archive
+      </a>
+    </li>
+  </ul>
+</nav>
+      <div class="documentwrapper"><div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+  <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">automate-ctl (executable)</a><ul>
+<li><a class="reference internal" href="#cleanse">cleanse</a></li>
+<li><a class="reference internal" href="#create-backup">create-backup</a></li>
+<li><a class="reference internal" href="#create-enterprise">create-enterprise</a></li>
+<li><a class="reference internal" href="#create-user">create-user</a></li>
+<li><a class="reference internal" href="#delete-application">delete-application</a></li>
+<li><a class="reference internal" href="#delete-backups">delete-backups</a></li>
+<li><a class="reference internal" href="#delete-enterprise">delete-enterprise</a></li>
+<li><a class="reference internal" href="#delete-project">delete-project</a></li>
+<li><a class="reference internal" href="#delete-user">delete-user</a></li>
+<li><a class="reference internal" href="#delete-visibility-node">delete-visibility-node</a></li>
+<li><a class="reference internal" href="#delete-visibility-node-by-id">delete-visibility-node-by-id</a></li>
+<li><a class="reference internal" href="#gather-logs">gather-logs</a></li>
+<li><a class="reference internal" href="#help">help</a></li>
+<li><a class="reference internal" href="#install-runner">install-runner</a></li>
+<li><a class="reference internal" href="#list-applications">list-applications</a></li>
+<li><a class="reference internal" href="#list-backups">list-backups</a></li>
+<li><a class="reference internal" href="#list-enterprises">list-enterprises</a></li>
+<li><a class="reference internal" href="#list-users">list-users</a></li>
+<li><a class="reference internal" href="#migrate-change-description">migrate-change-description</a></li>
+<li><a class="reference internal" href="#migrate-change-description-dry-run">migrate-change-description-dry-run</a></li>
+<li><a class="reference internal" href="#migrate-patchset-diffs">migrate-patchset-diffs</a></li>
+<li><a class="reference internal" href="#migrate-patchset-diffs-dry-run">migrate-patchset-diffs-dry-run</a></li>
+<li><a class="reference internal" href="#preflight-check">preflight-check</a></li>
+<li><a class="reference internal" href="#reconfigure">reconfigure</a></li>
+<li><a class="reference internal" href="#rename-enterprise">rename-enterprise</a></li>
+<li><a class="reference internal" href="#reset-password">reset-password</a></li>
+<li><a class="reference internal" href="#restore-backup">restore-backup</a></li>
+<li><a class="reference internal" href="#revoke-token">revoke-token</a></li>
+<li><a class="reference internal" href="#show-config">show-config</a></li>
+<li><a class="reference internal" href="#uninstall">uninstall</a></li>
+<li><a class="reference internal" href="#update-project-hooks">update-project-hooks</a></li>
+<li><a class="reference internal" href="#service-subcommands">Service Subcommands</a><ul>
+<li><a class="reference internal" href="#graceful-kill">graceful-kill</a></li>
+<li><a class="reference internal" href="#hup">hup</a></li>
+<li><a class="reference internal" href="#int">int</a></li>
+<li><a class="reference internal" href="#kill">kill</a></li>
+<li><a class="reference internal" href="#once">once</a></li>
+<li><a class="reference internal" href="#restart">restart</a></li>
+<li><a class="reference internal" href="#service-list">service-list</a></li>
+<li><a class="reference internal" href="#start">start</a></li>
+<li><a class="reference internal" href="#status">status</a><ul>
+<li><a class="reference internal" href="#log-files">Log Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stop">stop</a></li>
+<li><a class="reference internal" href="#tail">tail</a></li>
+<li><a class="reference internal" href="#term">term</a></li>
+<li><a class="reference internal" href="#usr1">usr1</a></li>
+<li><a class="reference internal" href="#usr2">usr2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="automate-ctl-executable">
+<h1>automate-ctl (executable)<a class="headerlink" href="#automate-ctl-executable" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/chef/chef-web-docs/blob/master/chef_master/source/ctl_delivery_server.rst">[edit on GitHub]</a></p>
+<a class="reference internal image-reference" href="_images/chef_automate_full.png"><img alt="_images/chef_automate_full.png" src="_images/chef_automate_full.png" style="width: 40px; height: 17px;" /></a>
+<p>The Chef Automate server includes a command-line utility named <cite>automate-ctl</cite>. Use this command-line tool to:</p>
+<ul class="simple">
+<li>Manage enterprises, users, and projects</li>
+<li>Reconfigure the Chef Automate server</li>
+<li>Start and stop individual services</li>
+<li>Tail Chef Automate server log files</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All commands must be run as <tt class="docutils literal"><span class="pre">sudo</span></tt>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prior to Chef Automate 0.6.0, this tool was named <cite>delivery-ctl</cite>. To support backwards compatibility, you can continue to call <cite>delivery-ctl</cite> in Chef Automate 0.6.0.</p>
+</div>
+<div class="section" id="cleanse">
+<h2>cleanse<a class="headerlink" href="#cleanse" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">cleanse</span></tt> subcommand is used to re-set the Chef Automate server to the state it was in prior to the first time the <tt class="docutils literal"><span class="pre">reconfigure</span></tt> subcommand is run. This command will:</p>
+<ul class="simple">
+<li>Destroy all data and logs</li>
+<li>Create a backup of the system config files and place them in a directory in root, such as <tt class="docutils literal"><span class="pre">/root/delivery-cleanse-2015-12-15T15:51</span></tt></li>
+</ul>
+<p>The software that was put on-disk by the package installation will remain. Re-run <tt class="docutils literal"><span class="pre">automate-ctl</span> <span class="pre">reconfigure</span></tt> to recreate the default data and configuration files.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl cleanse
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-backup">
+<h2>create-backup<a class="headerlink" href="#create-backup" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">create-backup</span></tt> subcommand is used to create Chef Automate backup archives and Elasticseach snapshots. When used with the default configuration it will create backup archives and Elasticseach snapshots</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ automate-ctl create-backup [NAME] [options]
+     --chef-server-config         Backup up the Chef Server config if present
+     --digest [int]               The SHA digest length to output. 256, 384, and 512 are valid
+     --force                      Agree to all warnings and prompts
+     --name [string]              The output name of the backup
+     --no-census                  Do not back up Chef Automate&#39;s census data
+     --no-compliance-profiles     Do not back up Chef Automate&#39;s compliance profiles
+     --no-config                  Do not back up Chef Automate&#39;s configuration directory
+     --no-db                      Do not back up Chef Automate&#39;s database
+     --no-elasticsearch           Do not snapshot Chef Automate&#39;s Elasticsearch
+     --no-git                     Do not back up Chef Automate&#39;s git repositories
+     --no-license                 Do not back up Chef Automate&#39;s license file
+     --no-wait                    Do not wait for non-blocking backup operations
+     --quiet                      Do not output non-error information
+     --rabbit                     Back up Chef Automate&#39;s RabbitMQ queues
+     --retry-limit                Maximum number of times to retry archive uploads to S3
+     --staging-dir [string]       The path to use for temporary files during backup
+ -h, --help                       Show the usage message
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">NAME</span></tt> value is optional. If omitted, a default name with the current time will be used.</p>
+</div>
+<p><strong>Examples</strong></p>
+<dl class="docutils">
+<dt>Complete backup:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">create-backup</span></tt></dd>
+<dt>Elasticsearch snapshot only:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">create-backup</span> <span class="pre">--no-census</span> <span class="pre">--no-config</span> <span class="pre">--no-db</span> <span class="pre">--no-license</span> <span class="pre">--no-git</span></tt></dd>
+<dt>Automate archive only</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">create-backup</span> <span class="pre">--no-elasticsearch</span></tt></dd>
+</dl>
+</div>
+<div class="section" id="create-enterprise">
+<h2>create-enterprise<a class="headerlink" href="#create-enterprise" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">create-enterprise</span></tt> subcommand is used to create a Chef Automate enterprise. A public key is required.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl create-enterprise ENT_NAME --ssh-pub-key-file<span class="o">=</span>FILE_NAME
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">ENT_NAME</span></tt> value must be alphanumeric.</p>
+</div>
+</div>
+<div class="section" id="create-user">
+<h2>create-user<a class="headerlink" href="#create-user" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">create-user</span></tt> subcommand is used to create a user. (The validation key for the organization may be returned to <tt class="docutils literal"><span class="pre">STDOUT</span></tt> when creating a user with this command.)</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl create-user ENT_NAME USER_NAME FIRST_NAME <span class="o">[</span>MIDDLE_NAME<span class="o">]</span> LAST_NAME EMAIL PASSWORD SSH_PUBLIC_KEY
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl create-user ENT_NAME john_smith
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-application">
+<h2>delete-application<a class="headerlink" href="#delete-application" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-application</span></tt> subcommand is used to delete OAuth credentials for the named application.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-application APP_NAME
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-application github
+</pre></div>
+</div>
+<p>returns something similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>You have successfully deleted the OAuth Application: github
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-application bamboo
+</pre></div>
+</div>
+<p>returns something similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Error: OAuth Application bamboo not found.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-backups">
+<h2>delete-backups<a class="headerlink" href="#delete-backups" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-backups</span></tt> subcommand is used to delete Chef Automate backup archives and Elasticseach snapshots. The command matches a given regular expression and prompts the user to confirm deletion of each matched backup or snapshot.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-backups REGEX <span class="o">[</span>options<span class="o">]</span>
+     --force                      Agree to all warnings and prompts
+ -h, --help                       Show the usage message
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<dl class="docutils">
+<dt>Deleting a single Automate backup archive:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">delete-backups</span> <span class="pre">2016-10-14-08-38-55-chef-automate-backup.zst</span></tt></dd>
+<dt>Deleting a single Elasticsearch snapshot:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">delete-backups</span> <span class="pre">2016-10-14-08-38-55-chef-automate-backup$</span></tt></dd>
+<dt>Deleting all backup archives and snapshots from October, 2016:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">delete-backups</span> <span class="pre">2016-10-.+-chef-automate-backup</span> <span class="pre">--force</span></tt></dd>
+</dl>
+</div>
+<div class="section" id="delete-enterprise">
+<h2>delete-enterprise<a class="headerlink" href="#delete-enterprise" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-enterprise</span></tt> subcommand is used to delete a Chef Automate enterprise.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-enterprise ENT_NAME
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-enterprise pedant-testing-org
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-project">
+<h2>delete-project<a class="headerlink" href="#delete-project" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-project</span></tt> subcommand is used to delete a Chef Automate project.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-project ENT_NAME ORG_NAME PROJECT_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-user">
+<h2>delete-user<a class="headerlink" href="#delete-user" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-user</span></tt> subcommand is used to delete a user.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-user ENT_NAME USER_NAME
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-user ENT_NAME john_smith
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-visibility-node">
+<h2>delete-visibility-node<a class="headerlink" href="#delete-visibility-node" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-visibility-node</span></tt> subcommand is used to delete a node from the <strong>Node State</strong> dashboard in the Chef Automate UI.</p>
+<p>The node (and, if provided, the organization and/or Chef server) must match a single node. If multiple nodes match, a table of nodes that match the provided criteria will be displayed.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node NODE_NAME <span class="o">[</span>options<span class="o">]</span>
+        --org ORG                    Organization the node belongs to
+        --chef_server CHEF_SERVER    Chef server the node belongs to
+    -h, --help                       Show this message
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node tester1
+Node tester1 <span class="o">(</span>UUID: f470b942-31b6-4665-81df-03013a0b6ef6<span class="o">)</span> has been deleted.
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node tester2
+Multiple nodes were found matching your request. Please delete by ID using: automate-ctl delete-visibility-node-by-id NODE_UUID
+
+Node UUID                            Node Name Org Name Chef <span class="nv">Server</span>
+<span class="o">====================================</span> <span class="o">=========</span> <span class="o">========</span> <span class="o">===========</span>
+6bbe462c-670e-4ca4-b9f3-e45ed4c78f7c tester2   org1     localhost
+2380c127-7e54-46b3-b4c2-28ae7f2afe10 tester2   org2     localhost
+
+ERROR: Unable to delete node with name tester2
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node tester2 --org org2
+Node tester2 <span class="o">(</span>UUID: 2380c127-7e54-46b3-b4c2-28ae7f2afe10<span class="o">)</span> has been deleted.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-visibility-node-by-id">
+<h2>delete-visibility-node-by-id<a class="headerlink" href="#delete-visibility-node-by-id" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">delete-visibility-node-by-id</span></tt> subcommand is used to delete a node from the <strong>Node State</strong> dashboard in the Chef Automate UI using the node&#8217;s unique ID.</p>
+<p>This is helpful if <tt class="docutils literal"><span class="pre">delete-visibility-node</span></tt> is unable to delete a node by its node name, org, and/or Chef server.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node-by-id NODE_UUID
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl delete-visibility-node-by-id e05d6c79-15ab-417e-a54e-4fe28a84c04c
+Node tester3 <span class="o">(</span>UUID: e05d6c79-15ab-417e-a54e-4fe28a84c04c<span class="o">)</span> has been deleted
+</pre></div>
+</div>
+</div>
+<div class="section" id="gather-logs">
+<h2>gather-logs<a class="headerlink" href="#gather-logs" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">gather-logs</span></tt> command is used to collect the logs from Chef Automate into a compressed file archive. Once it runs it will create a tbz2 file in the current working directory with the timestamp as the file name.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl gather-logs
+</pre></div>
+</div>
+</div>
+<div class="section" id="help">
+<h2>help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">help</span></tt> subcommand is used to print a list of all available <tt class="docutils literal"><span class="pre">automate-ctl</span></tt> commands.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl <span class="nb">help</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-runner">
+<span id="id1"></span><h2>install-runner<a class="headerlink" href="#install-runner" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">install-runner</span></tt> subcommand configures a remote node as a job runner, which are used by Chef Automate to run phase jobs. For more information on runners, please see <a class="reference internal" href="job_dispatch.html"><em>Job Dispatch</em></a>.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ automate-ctl install-runner FQDN USERNAME [options]
+
+  Arguments:
+    FQDN       Fully qualified domain name of the remote host that will be configured into a runner
+    USERNAME   The username used for authentication to the remote host that will be configured into a runner
+
+  Options:
+   -h, --help                    Show the usage message
+   -i, --ssh-identity-file FILE  SSH identity file used for authentication to the remote host
+   -I, --installer FILE          The location of the ChefDK package for the runner.
+                                 This option cannot be passed with --chefdk-version as that option specifies remote download.
+                                 If neither are passed, the latest ChefDK will be downloaded remotely
+
+   -p, --port PORT               SSH port to connect to on the remote host (Default: 22)
+   -P, --password [PASSWORD]     Pass if you need to set a password for ssh and / or sudo access.
+                                 You can pass the password in directly or you will be prompted if you simply pass --password.
+                                 If --ssh-identify-file is also passed, will only be used for sudo access
+
+   -v, --chefdk-version VERSION  Custom version of the ChefDK you wish to download and install.
+                                 This option cannot be passed with --installer as that option specifies using a package local to this server.
+                                 If neither are passed, the latest ChefDK will be downloaded remotely
+
+   -y, --yes                     Skip configuration confirmation and overwrite any existing Chef Server nodes of the same name as FQDN
+   -e, --enterprise              Legacy option, only required if you have more than one enterprise configured. Workflow enterprise to add the runner into
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The username provided must be a user who has sudo access on the remote node.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At least one of <tt class="docutils literal"><span class="pre">--password</span> <span class="pre">[PASSWORD]</span></tt> or <tt class="docutils literal"><span class="pre">--ssh-identity-file</span> <span class="pre">FILE</span></tt> are necessary for ssh access.</p>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl install-runner
+</pre></div>
+</div>
+<p>Installing the latest ChefDK via download and CLI prompt for SSH / Sudo password.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl install-runner runner-hostname.mydomain.co ubuntu --password
+</pre></div>
+</div>
+<p>Installing with a ChefDK file local to your Workflow server, an SSH Key, and passwordless sudo.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl install-runner runner-hostname.mydomain.co ubuntu -i ~/.ssh/id_rsa -I ./chefdk.deb
+</pre></div>
+</div>
+<p>Installing a custom version of ChefDK via download, a identity file for ssh access, and a Sudo password.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl install-runner runner-hostname.mydomain.co ubuntu -v 0.18.30 -p my_password -i ~/.ssh/id_rsa
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-applications">
+<h2>list-applications<a class="headerlink" href="#list-applications" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">list-applications</span></tt> subcommand lists all applications with OAuth credentials.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl list-applications
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl list-applications
+</pre></div>
+</div>
+<p>returns something similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>OAuth Applications:
+ github
+ github-enterprise
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-backups">
+<h2>list-backups<a class="headerlink" href="#list-backups" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">list-backups</span></tt> subcommand is used to list Chef Automate backup archives and Elasticseach snapshots.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ automate-ctl list-backups [options]
+     --all                        List all backups and snapshots (default)
+     --automate                   Only list Chef Automate&#39;s backup archives
+     --elasticsearch              Only list Chef Automate&#39;s Elasticsearch snapshots
+     --format [string]            The output format. &#39;text&#39; or &#39;json&#39;
+ -h, --help                       Show the usage message
+</pre></div>
+</div>
+<p><strong>Examples</strong></p>
+<dl class="docutils">
+<dt>Return a list all backups as JSON:</dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">list-backups</span> <span class="pre">--format</span> <span class="pre">json</span></tt></dd>
+</dl>
+</div>
+<div class="section" id="list-enterprises">
+<h2>list-enterprises<a class="headerlink" href="#list-enterprises" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">list-enterprises</span></tt> subcommand is used to list all of the enterprises currently present on the Chef Automate server.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl list-enterprises
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-users">
+<h2>list-users<a class="headerlink" href="#list-users" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">list-users</span></tt> subcommand is used to view a list of users.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl list-users ENT_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-change-description">
+<h2>migrate-change-description<a class="headerlink" href="#migrate-change-description" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">migrate-change-description</span></tt> subcommand is used to migrate the change description live run.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl migrate-change-description ENT_NAME ORG_NAME PROJECT_NAME CHANGE
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-change-description-dry-run">
+<h2>migrate-change-description-dry-run<a class="headerlink" href="#migrate-change-description-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">migrate-change-description-dry-run</span></tt> subcommand is used to execute a dry run migration of the change description.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl migrate-change-description-dry-run ENT_NAME ORG_NAME PROJECT_NAME CHANGE
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-patchset-diffs">
+<h2>migrate-patchset-diffs<a class="headerlink" href="#migrate-patchset-diffs" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">migrate-patchset-diffs</span></tt> subcommand is used to update patchset diffs to include numstat.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl migrate-patchset-diffs ENT_NAME ORG_NAME PROJECT_NAME PATCHSET_DIFF
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-patchset-diffs-dry-run">
+<h2>migrate-patchset-diffs-dry-run<a class="headerlink" href="#migrate-patchset-diffs-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">migrate-patchset-diffs-dry-run</span></tt> subcommand is used to execute a dry run update of patchset diffs to include numstat.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl migrate-patchset-diffs-dry-run ENT_NAME ORG_NAME PROJECT_NAME PATCHSET_DIFF
+</pre></div>
+</div>
+</div>
+<div class="section" id="preflight-check">
+<h2>preflight-check<a class="headerlink" href="#preflight-check" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">preflight-check</span></tt> subcommand is used to check for common problems in your infrastructure environment before setup and configuration of Chef Automate begins.</p>
+<p>New in Chef Automate 0.6.64.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl preflight-check
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="reconfigure">
+<h2>reconfigure<a class="headerlink" href="#reconfigure" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">reconfigure</span></tt> subcommand is used to reconfigure the Chef Automate server after changes are made to the delivery configuration file, located at <tt class="docutils literal"><span class="pre">/etc/delivery/delivery.rb</span></tt>. When changes are made to the delivery configuration file, they are not applied to the Chef Automate configuration until after this command is run. This subcommand also restarts any services for which the <tt class="docutils literal"><span class="pre">service_name['enabled']</span></tt> setting is set to <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl reconfigure
+</pre></div>
+</div>
+</div>
+<div class="section" id="rename-enterprise">
+<h2>rename-enterprise<a class="headerlink" href="#rename-enterprise" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">rename-enterprise</span></tt> subcommand is used to rename an existing Chef Automate enterprise.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl rename-enterprise CURRENT_ENT_NAME NEW_ENT_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="reset-password">
+<h2>reset-password<a class="headerlink" href="#reset-password" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">reset-password</span></tt> command is used to reset the password for an existing Chef Automate user.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl reset-password ENTERPRISE_NAME USER_NAME NEW_PASSWORD
+</pre></div>
+</div>
+</div>
+<div class="section" id="restore-backup">
+<h2>restore-backup<a class="headerlink" href="#restore-backup" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">restore-backup</span></tt> subcommand is used to restore Chef Automate backup archives and Elasticsearch snapshots.</p>
+<p>The command is intended to restore an Automate instance completely from backup, however, it does support restoring only specific data types when given compatible backup archives and snapshots.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Backups created with the older <tt class="docutils literal"><span class="pre">automate-ctl</span> <span class="pre">backup-data</span></tt> command are not supported with this command. If you wish to restore an older backup please install the version of Chef Automate that took the backup and use <tt class="docutils literal"><span class="pre">automate-ctl</span> <span class="pre">restore-data</span></tt></p>
+</div>
+<p><strong>Syntax</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl restore-backup /path/to/chef-automate-backup.zst [ELASTICSEARCH_SNAPSHOT] [options]
+$ automate-ctl restore-backup us-east-1:s3_bucket:chef-automate-backup.zst [ELASTICSEARCH_SNAPSHOT] [options]
+$ automate-ctl restore-backup ELASTICSEARCH_SNAPSHOT [options]
+     --digest [int]               The SHA digest of the backup archive
+     --force                      Agree to all warnings and prompts
+     --no-chef-server-config      Do not restore the Chef Server config if present
+     --no-census                  Do not restore Chef Automate&#39;s census data
+     --no-compliance-profiles     Do not restore Chef Automate&#39;s compliance profiles
+     --no-config                  Do not restore Chef Automate&#39;s configuration directory
+     --no-db                      Do not restore Chef Automate&#39;s database
+     --no-git                     Do not restore Chef Automate&#39;s git repositories
+     --no-license                 Do not restore Chef Automate&#39;s license file
+     --no-rabbit                  Do not restore Chef Automate&#39;s RabbitMQ data
+     --no-wait                    Do not wait for non-blocking restore operations
+     --quiet                      Do not output non-error information
+     --retry-limit                Maximum number of times to retry archive downloads from S3
+     --staging-dir [string]       The path to use for temporary files during restore
+ -h, --help                       Show the usage message
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">ELASTICSEARCH_SNAPSHOT</span></tt> value is optional when given a backup archive path.</p>
+</div>
+<dl class="docutils">
+<dt><strong>Examples</strong></dt>
+<dd><tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">restore-backup</span> <span class="pre">us-east-1:your-s3-bucket:2016-10-14-08-38-55-chef-automate-backup.zst</span> <span class="pre">2016-10-14-08-38-55-chef-automate-backup</span></tt>
+<tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">restore-backup</span> <span class="pre">2016-10-14-08-38-55-chef-automate-backup</span></tt>
+<tt class="docutils literal"><span class="pre">$</span> <span class="pre">automate-ctl</span> <span class="pre">restore-backup</span> <span class="pre">us-east-1:your-s3-bucket:2016-10-14-08-38-55-chef-automate-backup.zst</span> <span class="pre">--no-census</span> <span class="pre">--no-license</span> <span class="pre">--no-config</span></tt></dd>
+</dl>
+</div>
+<div class="section" id="revoke-token">
+<h2>revoke-token<a class="headerlink" href="#revoke-token" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">revoke-token</span></tt> subcommand is used to revoke a user&#8217;s token.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl revoke-token ENT_NAME USER_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-config">
+<h2>show-config<a class="headerlink" href="#show-config" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">show-config</span></tt> subcommand is used to view the configuration that will be generated by the <tt class="docutils literal"><span class="pre">reconfigure</span></tt> subcommand. This command is most useful in the early stages of a deployment to ensure that everything is built properly prior to installation.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl show-config
+</pre></div>
+</div>
+</div>
+<div class="section" id="uninstall">
+<h2>uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">uninstall</span></tt> subcommand is used to remove the Chef Automate application, but without removing any of the data. This subcommand will shut down all services (including the <tt class="docutils literal"><span class="pre">runit</span></tt> process supervisor).</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl uninstall
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To revert the <tt class="docutils literal"><span class="pre">uninstall</span></tt> subcommand, run the <tt class="docutils literal"><span class="pre">reconfigure</span></tt> subcommand (because the <tt class="docutils literal"><span class="pre">start</span></tt> subcommand is disabled by the <tt class="docutils literal"><span class="pre">uninstall</span></tt> command).</p>
+</div>
+</div>
+<div class="section" id="update-project-hooks">
+<h2>update-project-hooks<a class="headerlink" href="#update-project-hooks" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">update-project-hooks</span></tt> subcommand is used to update git hooks for all projects.</p>
+<p><strong>Syntax</strong></p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl update-project-hooks ENT_NAME ORG_NAME PROJECT_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="service-subcommands">
+<h2>Service Subcommands<a class="headerlink" href="#service-subcommands" title="Permalink to this headline">¶</a></h2>
+<p>This command has a built in process supervisor that ensures all of the required services are in the appropriate state at any given time. The supervisor starts two processes per service and provides the following subcommands for managing services: <tt class="docutils literal"><span class="pre">hup</span></tt>, <tt class="docutils literal"><span class="pre">int</span></tt>, <tt class="docutils literal"><span class="pre">kill</span></tt>, <tt class="docutils literal"><span class="pre">once</span></tt>, <tt class="docutils literal"><span class="pre">restart</span></tt>, <tt class="docutils literal"><span class="pre">service-list</span></tt>, <tt class="docutils literal"><span class="pre">start</span></tt>, <tt class="docutils literal"><span class="pre">status</span></tt>, <tt class="docutils literal"><span class="pre">stop</span></tt>, <tt class="docutils literal"><span class="pre">tail</span></tt>, and <tt class="docutils literal"><span class="pre">term</span></tt>.</p>
+<div class="section" id="graceful-kill">
+<h3>graceful-kill<a class="headerlink" href="#graceful-kill" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">kill</span></tt> subcommand is used to send a <tt class="docutils literal"><span class="pre">SIGKILL</span></tt> to all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl <span class="nb">kill</span> name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="hup">
+<h3>hup<a class="headerlink" href="#hup" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">hup</span></tt> subcommand is used to send a <tt class="docutils literal"><span class="pre">SIGHUP</span></tt> to all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl hup name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="int">
+<h3>int<a class="headerlink" href="#int" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">int</span></tt> subcommand is used to send a <tt class="docutils literal"><span class="pre">SIGINT</span></tt> to all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl int name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="kill">
+<h3>kill<a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">kill</span></tt> subcommand is used to send a <tt class="docutils literal"><span class="pre">SIGKILL</span></tt> to all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl <span class="nb">kill</span> name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="once">
+<h3>once<a class="headerlink" href="#once" title="Permalink to this headline">¶</a></h3>
+<p>The supervisor for the Chef Automate server is configured to restart any service that fails, unless that service has been asked to change its state. The <tt class="docutils literal"><span class="pre">once</span></tt> subcommand is used to tell the supervisor to not attempt to restart any service that fails.</p>
+<p>This command is useful when troubleshooting configuration errors that prevent a service from starting. Run the <tt class="docutils literal"><span class="pre">once</span></tt> subcommand followed by the <tt class="docutils literal"><span class="pre">status</span></tt> subcommand to look for services in a down state and/or to identify which services are in trouble. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl once name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="restart">
+<h3>restart<a class="headerlink" href="#restart" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">restart</span></tt> subcommand is used to restart all services enabled on the Chef Automate server or to restart an individual service by specifying the name of that service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl restart name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand. When a service is successfully restarted the output should be similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ok: run: service_name: <span class="o">(</span>pid 12345<span class="o">)</span> 1s
+</pre></div>
+</div>
+</div>
+<div class="section" id="service-list">
+<h3>service-list<a class="headerlink" href="#service-list" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand is used to display a list of all available services. A service that is enabled is labeled with an asterisk (*).</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl service-list
+</pre></div>
+</div>
+</div>
+<div class="section" id="start">
+<h3>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">start</span></tt> subcommand is used to start all services that are enabled in the Chef Automate server. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl start name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand. When a service is successfully started the output should be similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ok: run: service_name: <span class="o">(</span>pid 12345<span class="o">)</span> 1s
+</pre></div>
+</div>
+<p>The supervisor for the Chef Automate server is configured to wait seven seconds for a service to respond to a command from the supervisor. If you see output that references a timeout, it means that a signal has been sent to the process, but that the process has yet to actually comply. In general, processes that have timed out are not a big concern, unless they are failing to respond to the signals at all. If a process is not responding, use a command like the <tt class="docutils literal"><span class="pre">kill</span></tt> subcommand to stop the process, investigate the cause (if required), and then use the <tt class="docutils literal"><span class="pre">start</span></tt> subcommand to re-enable it.</p>
+</div>
+<div class="section" id="status">
+<h3>status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">status</span></tt> subcommand is used to show the status of all services available to the Chef Automate server. The results will vary based on the configuration of a given server. This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl status
+</pre></div>
+</div>
+<p>and will return the status for all services. Status can be returned for individual services by specifying the name of the service as part of the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl status name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+<p>When service status is requested, the output should be similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ run: service_name: <span class="o">(</span>pid 12345<span class="o">)</span> 12345s<span class="p">;</span> run: log: <span class="o">(</span>pid 1234<span class="o">)</span> 67890s
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">run:</span></tt> is the state of the service (<tt class="docutils literal"><span class="pre">run:</span></tt> or <tt class="docutils literal"><span class="pre">down:</span></tt>)</li>
+<li><tt class="docutils literal"><span class="pre">service_name:</span></tt> is the name of the service for which status is returned</li>
+<li><tt class="docutils literal"><span class="pre">(pid</span> <span class="pre">12345)</span></tt> is the process identifier</li>
+<li><tt class="docutils literal"><span class="pre">12345s</span></tt> is the uptime of the service, in seconds</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ down: opscode-erchef: <span class="o">(</span>pid 35546<span class="o">)</span> 10s
+</pre></div>
+</div>
+<p>By default, runit will restart services automatically when the services fail. Therefore, runit may report the status of a service as <tt class="docutils literal"><span class="pre">run:</span></tt> even when there is an issue with that service. When investigating why a particular service is not running as it should be, look for the services with the shortest uptimes. For example, the list below indicates that the <strong>opscode-erchef</strong> should be investigated further:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run: oc-id
+run: opscode-chef: <span class="o">(</span>pid 4327<span class="o">)</span> 13671s<span class="p">;</span> run: log: <span class="o">(</span>pid 4326<span class="o">)</span> 13671s
+run: opscode-erchef: <span class="o">(</span>pid 5383<span class="o">)</span> 5s<span class="p">;</span> run: log: <span class="o">(</span>pid 4382<span class="o">)</span> 13669s
+run: opscode-expander: <span class="o">(</span>pid 4078<span class="o">)</span> 13694s<span class="p">;</span> run: log: <span class="o">(</span>pid 4077<span class="o">)</span> 13694s
+run: opscode-expander-reindexer: <span class="o">(</span>pid 4130<span class="o">)</span> 13692s<span class="p">;</span> run: log: <span class="o">(</span>pid 4114<span class="o">)</span> 13692s
+</pre></div>
+</div>
+<div class="section" id="log-files">
+<h4>Log Files<a class="headerlink" href="#log-files" title="Permalink to this headline">¶</a></h4>
+<p>A typical status line for a service that is running any of the Chef Automate server front-end services is similar to the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run: name_of_service: <span class="o">(</span>pid 1486<span class="o">)</span> 7819s<span class="p">;</span> run: log: <span class="o">(</span>pid 1485<span class="o">)</span> 7819s
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">run</span></tt> describes the state in which the supervisor attempts to keep processes. This state is either <tt class="docutils literal"><span class="pre">run</span></tt> or <tt class="docutils literal"><span class="pre">down</span></tt>. If a service is in a <tt class="docutils literal"><span class="pre">down</span></tt> state, it should be stopped</li>
+<li><tt class="docutils literal"><span class="pre">name_of_service</span></tt> is the service name, for example: <tt class="docutils literal"><span class="pre">opscode-solr4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">(pid</span> <span class="pre">1486)</span> <span class="pre">7819s;</span></tt> is the process identifier followed by the amount of time (in seconds) the service has been running</li>
+<li><tt class="docutils literal"><span class="pre">run:</span> <span class="pre">log:</span> <span class="pre">(pid</span> <span class="pre">1485)</span> <span class="pre">7819s</span></tt> is the log process. It is typical for a log process to have a longer run time than a service; this is because the supervisor does not need to restart the log process in order to connect the supervised process</li>
+</ul>
+<p>If the service is down, the status line will appear similar to the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>down: opscode-solr4: 3s, normally up<span class="p">;</span> run: log: <span class="o">(</span>pid 1485<span class="o">)</span> 8526s
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">down</span></tt> indicates that the service is in a down state</li>
+<li><tt class="docutils literal"><span class="pre">3s,</span> <span class="pre">normally</span> <span class="pre">up;</span></tt> indicates that the service is normally in a run state and that the supervisor would attempt to restart this service after a reboot</li>
+</ul>
+</div>
+</div>
+<div class="section" id="stop">
+<h3>stop<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">stop</span></tt> subcommand is used to stop all services enabled on the Chef Automate server. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl stop name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand. When a service is successfully stopped the output should be similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ok: diwb: service_name: 0s, normally up
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl stop
+</pre></div>
+</div>
+<p>will return something similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ok: down: nginx: 393s, normally up
+ok: down: opscode-chef: 391s, normally up
+ok: down: opscode-erchef: 391s, normally up
+ok: down: opscode-expander: 390s, normally up
+ok: down: opscode-expander-reindexer: 389s, normally up
+ok: down: opscode-solr4: 389s, normally up
+ok: down: postgresql: 388s, normally up
+ok: down: rabbitmq: 388s, normally up
+ok: down: redis_lb: 387s, normally up
+</pre></div>
+</div>
+</div>
+<div class="section" id="tail">
+<h3>tail<a class="headerlink" href="#tail" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">tail</span></tt> subcommand is used to follow all of the Chef Automate server logs for all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl tail name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="term">
+<h3>term<a class="headerlink" href="#term" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">term</span></tt> subcommand is used to send a <tt class="docutils literal"><span class="pre">SIGTERM</span></tt> to all services. This command can also be run for an individual service by specifying the name of the service in the command.</p>
+<p>This subcommand has the following syntax:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ automate-ctl term name_of_service
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">name_of_service</span></tt> represents the name of any service that is listed after running the <tt class="docutils literal"><span class="pre">service-list</span></tt> subcommand.</p>
+</div>
+<div class="section" id="usr1">
+<h3>usr1<a class="headerlink" href="#usr1" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">usr1</span></tt> subcommand is used to send the services a USR1.</p>
+</div>
+<div class="section" id="usr2">
+<h3>usr2<a class="headerlink" href="#usr2" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">usr2</span></tt> subcommand is used to send the services a USR2.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+
+
+          <div class="footer" role="contentinfo">
+                &copy; Copyright: This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+              This page is about: current version of Chef.
+            <a href="/feedback.html">Provide feedback on Chef documentation</a>.
+            </div>
+
+<!-- Start of Async Google Analytics Code -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6369228-7', 'auto', {'legacyCookieDomain': '.chef.io', 'allowLinker': true});
+  ga('send', 'pageview');
+
+  var trackOutboundLink = function(url) {
+    if (ga.q) {
+     document.location = url;
+    } else {
+      ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+    }
+  };
+</script>
+<!-- End of Async Google Analytics Code -->
+
+<!-- Start of Marketo Analytics Code -->
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('255-VFB-268');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+<!-- End of Marketo Analytics Code -->
+
+<!-- Start of DemandBase Analytics Code -->
+<script type="text/javascript">
+	(function(d,b,a,s,e){ var t = b.createElement(a),
+		fs = b.getElementsByTagName(a)[0]; t.async=1; t.id=e;
+		t.src=('https:'==document.location.protocol ? 'https://' : 'http://') + s;
+		fs.parentNode.insertBefore(t, fs); })
+	(window,document,'script','scripts.demandbase.com/zH7sZrWR.min.js','demandbase_js_lib');
+</script>
+<!-- End of DemandBase Analytics Code -->
+
+<!-- Start of Segment Analytics Code -->
+<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("RtyoRfLf1ZETiJcIfkKND3Wq1K1LhYHx");
+  analytics.page();
+  }}();
+</script>
+<!-- End of Segment Analytics Code -->
+
+
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+  </body>
+</html>
